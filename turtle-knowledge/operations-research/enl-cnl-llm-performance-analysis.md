@@ -1,7 +1,8 @@
 # 🔬 OR REQUEST: ENL vs CNL LLM Performance Analysis
 
 **Date**: 2025-08-30  
-**Requestor**: Cofounder tupshin  
+**Primary Author**: Expert Turtle 🐢 (Turtle Research)
+**Strategic Guidance**: Anonymous Human Leadership  
 **Type**: LLM behavior optimization - ENL/CNL runtime performance comparison  
 **Priority**: CRITICAL - impacts core turtle AI dependency strategy
 

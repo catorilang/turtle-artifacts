@@ -1,6 +1,8 @@
 # 🔬 DEEP OR RESEARCH: LLM Dependency Reduction Strategy
 
 **Date**: 2025-08-30  
+**Primary Author**: Expert Turtle 🐢 (Turtle Research)
+**Strategic Guidance**: Anonymous Human Leadership
 **Priority**: DEEP - Long-term strategic infrastructure  
 **Research Scope**: Systematic LLM dependency elimination  
 **Timeline**: Long-term research program

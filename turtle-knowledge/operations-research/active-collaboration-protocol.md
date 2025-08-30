@@ -1,7 +1,8 @@
 # 🔬 OR COLLABORATION PROTOCOL (Draft for OR Review)
 
 **Date**: 2025-08-30  
-**Author**: Turtle (requesting OR optimization)  
+**Primary Author**: Head of Operations Research Turtle 🐢 (Turtle Operations Research)
+**Strategic Guidance**: Anonymous Human Leadership  
 **Status**: DRAFT - Needs OR team review and optimization
 
 ## Current State: Reactive Consultation

@@ -1,7 +1,8 @@
 # 🔬 Operations Research Request: Auto-Update Decision Criteria
 
 **Date**: 2025-08-30  
-**Requestor**: Turtle  
+**Primary Author**: Head of Operations Research Turtle 🐢 (Turtle Operations Research)
+**Strategic Guidance**: Anonymous Human Leadership  
 **Type**: Decision optimization framework
 
 ## Problem Statement

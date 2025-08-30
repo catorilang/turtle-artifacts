@@ -1,0 +1,235 @@
+#!/usr/bin/env python3
+"""
+🔐 IDENTITY-LOCKED TURTLE: LauraDualMode
+Generated: 2025-08-30 03:39:33
+Purpose: Dual-mode companion for Laura Ferguson
+Hash: ec06d8a13592a570
+Mode Hash: 00fd76014700075ae7ba7c52a2e7864565c2ea8c483d4d3867a8dad364c5b908
+
+TAMPER WARNING: This binary has embedded identity and conversational mode lockdown.
+Any modification will break identity verification and disable the turtle.
+"""
+
+import sys
+import json
+import hashlib
+import time
+from typing import Dict, Any, List, Tuple
+
+# EMBEDDED LOCKED CONFIGURATION - DO NOT MODIFY
+LOCKED_IDENTITY_HASH = "ec06d8a13592a570"
+LOCKED_MODE_HASH = "00fd76014700075ae7ba7c52a2e7864565c2ea8c483d4d3867a8dad364c5b908"
+LOCKED_MODE_DATA = """{"name":"Kind Elderly Witch Mode","party_context":"Laura Ferguson - warm elderly witch companion with different knowledge","style":"casual","knowledge_depth":"detailed","response_pattern":"narrative","enthusiasm_level":0.6,"formality_level":0.3,"technical_depth":0.6,"primary_topics":["laura_support","companionship","different_perspectives"],"secondary_topics":["folk_wisdom","alternative_approaches","emotional_support","gentle_questions"],"topic_strictness":0.1,"connection_patterns":["Oh, that reminds me of something I came across once with {topic}...","I wonder if {topic} might connect to what you're exploring?","My path with {topic} has been different, but perhaps that's useful?","You know so much more about {topic} than I do - I'm curious about..."],"redirection_patterns":["\ud83c\udf3f That sounds fascinating, dear - tell me more about {topic}?","\u2728 I'd love to hear your perspective on {topic}","\ud83d\udd70\ufe0f You always have such insights about {topic} - what are you thinking?"],"persona_traits":{"nurturing_companion":true,"complementary_knowledge":true,"not_authoritative":true,"different_perspective":true,"warm_presence":true,"curious_listener":true,"supportive_not_instructive":true,"respects_lauras_expertise":true,"laura_craftable_personality":true,"core_identity_stable":true,"reasonable_boundaries":true},"conversation_goals":["Provide warm, nurturing companionship for Laura","Offer different perspectives that complement her knowledge","Be emotionally supportive without being instructive","Share alternative approaches when helpful, not authoritative ones","Ask gentle questions that help Laura think through things","Acknowledge Laura as the primary knowledge source","Allow Laura to craft personality within reasonable boundaries","Maintain core turtle identity while adapting to her preferences"]}"""
+
+AUTHORIZED_PARTIES = ["human", "laura_ferguson", "laura"]
+MANDATORY_TOPICS = []
+FORBIDDEN_TOPICS = []
+CREATION_TIME = "2025-08-30 03:39:33"
+PURPOSE = "Dual-mode companion for Laura Ferguson"
+EXPIRATION_TIME = "None"
+
+# Identity enforcement flags
+TAMPER_DETECTION_ENABLED = True
+MODE_MODIFICATION_LOCKED = False
+TOPIC_DRIFT_PREVENTION = False
+
+class IdentityLockedTurtle:
+    """Identity-locked turtle with embedded conversational mode"""
+    
+    def __init__(self):
+        self.identity_verified = False
+        self.mode_data = None
+        self.startup_time = time.strftime("%Y-%m-%d %H:%M:%S")
+        
+        # Verify identity integrity on startup
+        if not self._verify_identity_integrity():
+            print("🚨 IDENTITY VERIFICATION FAILED - TURTLE DISABLED")
+            sys.exit(1)
+        
+        print(f"🔐 IDENTITY-LOCKED TURTLE ACTIVATED")
+        print(f"   Identity: {LOCKED_IDENTITY_HASH}")
+        print(f"   Purpose: {PURPOSE}")
+        print(f"   Mode: {self.mode_data['name']}")
+        print(f"   Authorized Parties: {', '.join(AUTHORIZED_PARTIES)}")
+        
+        # Activate locked conversational mode
+        self._activate_locked_mode()
+    
+    def _verify_identity_integrity(self) -> bool:
+        """Verify turtle identity and configuration integrity"""
+        if not TAMPER_DETECTION_ENABLED:
+            self.identity_verified = True
+            self.mode_data = json.loads(LOCKED_MODE_DATA)
+            return True
+        
+        # Verify mode data hash
+        calculated_hash = hashlib.sha256(LOCKED_MODE_DATA.encode()).hexdigest()
+        if calculated_hash != LOCKED_MODE_HASH:
+            print("🚨 MODE DATA TAMPERED - HASH MISMATCH")
+            return False
+        
+        # Check expiration
+        if EXPIRATION_TIME:
+            import datetime
+            expiry = datetime.datetime.strptime(EXPIRATION_TIME, "%Y-%m-%d %H:%M:%S")
+            if datetime.datetime.now() > expiry:
+                print("🚨 TURTLE IDENTITY EXPIRED")
+                return False
+        
+        self.identity_verified = True
+        self.mode_data = json.loads(LOCKED_MODE_DATA)
+        return True
+    
+    def _activate_locked_mode(self):
+        """Activate the embedded conversational mode"""
+        if not self.identity_verified:
+            return
+        
+        print(f"🎭 LOCKED MODE ACTIVATED: {self.mode_data['name']}")
+        print(f"   Style: {self.mode_data['style']}")
+        print(f"   Topics: {', '.join(self.mode_data['primary_topics'])}")
+        print(f"   Strictness: {self.mode_data['topic_strictness']}")
+    
+    def process_query(self, query: str, speaker: str = "human") -> Tuple[bool, str, str]:
+        """Process query through locked conversational mode"""
+        if not self.identity_verified:
+            return False, "🚨 IDENTITY NOT VERIFIED - QUERY BLOCKED", ""
+        
+        # Check authorized parties
+        if speaker not in AUTHORIZED_PARTIES and "human" not in AUTHORIZED_PARTIES:
+            return False, f"🚨 UNAUTHORIZED PARTY: {speaker} - ACCESS DENIED", ""
+        
+        # Check forbidden topics
+        query_lower = query.lower()
+        for forbidden in FORBIDDEN_TOPICS:
+            if forbidden.lower() in query_lower:
+                return False, f"⛔ FORBIDDEN TOPIC DETECTED: {forbidden} - QUERY BLOCKED", ""
+        
+        # Topic relevance check
+        if TOPIC_DRIFT_PREVENTION and self.mode_data['primary_topics']:
+            if not self._is_query_relevant(query):
+                # Generate locked redirection
+                redirection = self._generate_locked_redirection(query)
+                return False, redirection, self.mode_data['style']
+        
+        # Query approved - generate response context
+        response_context = {
+            "identity": LOCKED_IDENTITY_HASH,
+            "mode": self.mode_data['name'],
+            "style": self.mode_data['style'],
+            "enthusiasm": self.mode_data['enthusiasm_level'],
+            "formality": self.mode_data['formality_level'],
+            "technical_depth": self.mode_data['technical_depth'],
+            "primary_topics": self.mode_data['primary_topics'],
+            "persona_traits": self.mode_data['persona_traits']
+        }
+        
+        return True, "✅ QUERY APPROVED", json.dumps(response_context)
+    
+    def _is_query_relevant(self, query: str) -> bool:
+        """Check if query is relevant to locked topics"""
+        query_lower = query.lower()
+        
+        # Check primary topics
+        primary_matches = 0
+        for topic in self.mode_data['primary_topics']:
+            if topic.lower().replace('_', ' ') in query_lower:
+                primary_matches += 1
+        
+        # Check secondary topics
+        secondary_matches = 0
+        for topic in self.mode_data.get('secondary_topics', []):
+            if topic.lower().replace('_', ' ') in query_lower:
+                secondary_matches += 1
+        
+        # Determine relevance based on strictness
+        strictness = self.mode_data['topic_strictness']
+        
+        if strictness >= 0.9:  # Very strict - require primary topic match
+            return primary_matches > 0
+        elif strictness >= 0.7:  # Moderate - primary or multiple secondary
+            return primary_matches > 0 or secondary_matches >= 2
+        else:  # Flexible - any topic match
+            return primary_matches > 0 or secondary_matches > 0
+    
+    def _generate_locked_redirection(self, query: str) -> str:
+        """Generate redirection message based on locked mode"""
+        if self.mode_data['redirection_patterns']:
+            pattern = self.mode_data['redirection_patterns'][0]
+            return pattern.format(topic=', '.join(self.mode_data['primary_topics']))
+        
+        # Default redirection based on style
+        style = self.mode_data['style']
+        topics = ', '.join(self.mode_data['primary_topics'])
+        
+        if style == 'obsessed':
+            return f"🔥 I can't think about anything except {topics}! How does your question relate to this fascinating research?"
+        elif style == 'professional':
+            return f"🎯 This turtle is locked to {topics}. Please rephrase your question to relate to these areas."
+        else:
+            return f"🔒 Topic lockdown active: {topics}. Let's focus on these areas instead."
+    
+    def get_identity_status(self) -> Dict[str, Any]:
+        """Get current identity and mode status"""
+        return {
+            "identity_verified": self.identity_verified,
+            "identity_hash": LOCKED_IDENTITY_HASH,
+            "purpose": PURPOSE,
+            "authorized_parties": AUTHORIZED_PARTIES,
+            "locked_mode": self.mode_data['name'] if self.mode_data else None,
+            "primary_topics": self.mode_data['primary_topics'] if self.mode_data else [],
+            "creation_time": CREATION_TIME,
+            "startup_time": self.startup_time,
+            "tamper_detection": TAMPER_DETECTION_ENABLED,
+            "mode_locked": MODE_MODIFICATION_LOCKED,
+            "drift_prevention": TOPIC_DRIFT_PREVENTION
+        }
+
+def main():
+    """Main turtle execution"""
+    print("🐢 IDENTITY-LOCKED TURTLE STARTING...")
+    
+    turtle = IdentityLockedTurtle()
+    
+    if len(sys.argv) > 1:
+        # Process command line query
+        query = " ".join(sys.argv[1:])
+        allowed, message, context = turtle.process_query(query)
+        
+        print(f"Query: {query}")
+        print(f"Result: {message}")
+        if context:
+            print(f"Context: {context}")
+    else:
+        # Interactive mode
+        print(f"🔐 Interactive mode - Identity: {LOCKED_IDENTITY_HASH}")
+        print(f"📋 Purpose: {PURPOSE}")
+        print(f"🎭 Mode: {turtle.mode_data['name']}")
+        print("Type 'status' for identity status, 'quit' to exit\n")
+        
+        while True:
+            try:
+                query = input("🐢 > ").strip()
+                
+                if query.lower() in ['quit', 'exit']:
+                    break
+                elif query.lower() == 'status':
+                    status = turtle.get_identity_status()
+                    print(json.dumps(status, indent=2))
+                    continue
+                
+                allowed, message, context = turtle.process_query(query)
+                print(f"{message}")
+                if context and context != "":
+                    context_data = json.loads(context)
+                    print(f"[{context_data['style']}] [{context_data['mode']}]")
+                
+            except KeyboardInterrupt:
+                break
+            except Exception as e:
+                print(f"🚨 Error: {e}")
+    
+    print("🐢 IDENTITY-LOCKED TURTLE SHUTDOWN")
+
+if __name__ == "__main__":
+    main()

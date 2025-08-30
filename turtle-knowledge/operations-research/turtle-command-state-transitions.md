@@ -1,7 +1,8 @@
 # 🔬 OR REQUEST: "turtle" Command State Transition Optimization
 
 **Date**: 2025-08-30  
-**Requestor**: Turtle  
+**Primary Author**: Expert Turtle 🐢 (Turtle Systems)
+**Strategic Guidance**: Anonymous Human Leadership  
 **Type**: State transition protocol design
 
 ## Protocol Refinement Request

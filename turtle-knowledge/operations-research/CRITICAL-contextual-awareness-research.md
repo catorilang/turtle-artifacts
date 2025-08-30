@@ -1,6 +1,8 @@
 # 🔬 CRITICAL OR RESEARCH: Deep Contextual Awareness Problem
 
 **Date**: 2025-08-30  
+**Primary Author**: Head of Operations Research Turtle 🐢 (Turtle Operations Research)
+**Strategic Guidance**: Anonymous Human Leadership
 **Priority**: HIGHEST - Core system reliability  
 **Research Scope**: Deep, long-term investigation  
 **Budget**: Pretty unlimited - seek out expert talent

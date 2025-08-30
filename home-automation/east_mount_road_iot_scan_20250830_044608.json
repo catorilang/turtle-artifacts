@@ -1,0 +1,685 @@
+{
+  "devices": [
+    {
+      "ip": "10.0.0.1",
+      "hostname": "unifi.catori",
+      "mac": "d0:21:f9:5e:4e:a7",
+      "ports": [
+        22,
+        53,
+        80,
+        443,
+        8080,
+        8443,
+        9443
+      ],
+      "type": "unknown",
+      "category": "camera",
+      "device_type": "ip_camera",
+      "capabilities": [
+        "https_interface"
+      ]
+    },
+    {
+      "ip": "10.0.0.16",
+      "hostname": "wiz_979697.catori",
+      "mac": "a8:bb:50:97:96:97",
+      "ports": [],
+      "type": "unknown",
+      "category": "lighting",
+      "device_type": "wiz",
+      "capabilities": []
+    },
+    {
+      "ip": "10.0.0.29",
+      "hostname": "espressif.catori",
+      "mac": "d0:3f:27:08:f7:af",
+      "ports": [],
+      "type": "unknown",
+      "category": "unknown",
+      "device_type": "unidentified",
+      "capabilities": []
+    },
+    {
+      "ip": "10.0.0.33",
+      "hostname": null,
+      "mac": "d0:21:f9:76:50:d2",
+      "ports": [
+        22
+      ],
+      "type": "unknown",
+      "category": "unknown",
+      "device_type": "unidentified",
+      "capabilities": []
+    },
+    {
+      "ip": "10.0.0.35",
+      "hostname": "poppity.catori",
+      "mac": null,
+      "ports": [
+        22
+      ],
+      "type": "unknown",
+      "category": "unknown",
+      "device_type": "unidentified",
+      "capabilities": []
+    },
+    {
+      "ip": "10.0.0.36",
+      "hostname": null,
+      "mac": "68:d7:9a:c6:d8:c8",
+      "ports": [
+        22,
+        53,
+        80,
+        443
+      ],
+      "type": "unknown",
+      "category": "router",
+      "device_type": "network_device",
+      "capabilities": [
+        "https_interface"
+      ]
+    },
+    {
+      "ip": "10.0.0.60",
+      "hostname": "poppity",
+      "mac": null,
+      "ports": [
+        22
+      ],
+      "type": "unknown",
+      "category": "unknown",
+      "device_type": "unidentified",
+      "capabilities": []
+    },
+    {
+      "ip": "10.0.0.65",
+      "hostname": "BRWEC5C687AE761.catori",
+      "mac": "ec:5c:68:7a:e7:61",
+      "ports": [
+        80,
+        443
+      ],
+      "type": "unknown",
+      "category": "unknown",
+      "device_type": "unidentified",
+      "capabilities": [
+        "https_interface"
+      ]
+    },
+    {
+      "ip": "10.0.0.73",
+      "hostname": null,
+      "mac": "00:f6:20:7d:73:56",
+      "ports": [
+        8443
+      ],
+      "type": "unknown",
+      "category": "unknown",
+      "device_type": "unidentified",
+      "capabilities": []
+    },
+    {
+      "ip": "10.0.0.102",
+      "hostname": "wiz_8fdbc6.catori",
+      "mac": "a8:bb:50:8f:db:c6",
+      "ports": [],
+      "type": "unknown",
+      "category": "lighting",
+      "device_type": "wiz",
+      "capabilities": []
+    },
+    {
+      "ip": "10.0.0.112",
+      "hostname": "lwip.catori",
+      "mac": "2c:aa:8e:56:bb:db",
+      "ports": [],
+      "type": "unknown",
+      "category": "unknown",
+      "device_type": "unidentified",
+      "capabilities": []
+    },
+    {
+      "ip": "10.0.0.115",
+      "hostname": "wiz_97359e.catori",
+      "mac": "a8:bb:50:97:35:9e",
+      "ports": [],
+      "type": "unknown",
+      "category": "lighting",
+      "device_type": "wiz",
+      "capabilities": []
+    },
+    {
+      "ip": "10.0.0.120",
+      "hostname": "net_ac_7770.catori",
+      "mac": "ac:93:c4:18:77:70",
+      "ports": [],
+      "type": "unknown",
+      "category": "unknown",
+      "device_type": "unidentified",
+      "capabilities": []
+    },
+    {
+      "ip": "10.0.0.147",
+      "hostname": null,
+      "mac": "68:d7:9a:39:e0:47",
+      "ports": [
+        22,
+        53,
+        80,
+        443
+      ],
+      "type": "unknown",
+      "category": "router",
+      "device_type": "network_device",
+      "capabilities": [
+        "https_interface"
+      ]
+    },
+    {
+      "ip": "10.0.0.172",
+      "hostname": "front-yard-cam.catori",
+      "mac": "78:45:58:3f:16:67",
+      "ports": [
+        80,
+        443
+      ],
+      "type": "unknown",
+      "category": "unknown",
+      "device_type": "unidentified",
+      "capabilities": [
+        "https_interface"
+      ]
+    },
+    {
+      "ip": "10.0.0.177",
+      "hostname": "back-yard-cam.catori",
+      "mac": "d0:21:f9:91:25:da",
+      "ports": [
+        80,
+        443
+      ],
+      "type": "unknown",
+      "category": "unknown",
+      "device_type": "unidentified",
+      "capabilities": [
+        "https_interface"
+      ]
+    },
+    {
+      "ip": "10.0.0.201",
+      "hostname": "hc4-omv-1.catori",
+      "mac": "00:1e:06:49:1d:4a",
+      "ports": [
+        22,
+        80,
+        443
+      ],
+      "type": "unknown",
+      "category": "router",
+      "device_type": "network_device",
+      "capabilities": [
+        "https_interface"
+      ]
+    },
+    {
+      "ip": "10.0.0.213",
+      "hostname": null,
+      "mac": "10:5a:17:fe:1d:3b",
+      "ports": [],
+      "type": "unknown",
+      "category": "unknown",
+      "device_type": "unidentified",
+      "capabilities": []
+    },
+    {
+      "ip": "10.0.0.221",
+      "hostname": "wiz_dd9513.catori",
+      "mac": "a8:bb:50:dd:95:13",
+      "ports": [],
+      "type": "unknown",
+      "category": "lighting",
+      "device_type": "wiz",
+      "capabilities": []
+    }
+  ],
+  "report": {
+    "scan_time": "2025-08-30T04:46:08.451256",
+    "total_devices": 19,
+    "by_category": {
+      "camera": [
+        {
+          "ip": "10.0.0.1",
+          "hostname": "unifi.catori",
+          "mac": "d0:21:f9:5e:4e:a7",
+          "ports": [
+            22,
+            53,
+            80,
+            443,
+            8080,
+            8443,
+            9443
+          ],
+          "type": "unknown",
+          "category": "camera",
+          "device_type": "ip_camera",
+          "capabilities": [
+            "https_interface"
+          ]
+        }
+      ],
+      "lighting": [
+        {
+          "ip": "10.0.0.16",
+          "hostname": "wiz_979697.catori",
+          "mac": "a8:bb:50:97:96:97",
+          "ports": [],
+          "type": "unknown",
+          "category": "lighting",
+          "device_type": "wiz",
+          "capabilities": []
+        },
+        {
+          "ip": "10.0.0.102",
+          "hostname": "wiz_8fdbc6.catori",
+          "mac": "a8:bb:50:8f:db:c6",
+          "ports": [],
+          "type": "unknown",
+          "category": "lighting",
+          "device_type": "wiz",
+          "capabilities": []
+        },
+        {
+          "ip": "10.0.0.115",
+          "hostname": "wiz_97359e.catori",
+          "mac": "a8:bb:50:97:35:9e",
+          "ports": [],
+          "type": "unknown",
+          "category": "lighting",
+          "device_type": "wiz",
+          "capabilities": []
+        },
+        {
+          "ip": "10.0.0.221",
+          "hostname": "wiz_dd9513.catori",
+          "mac": "a8:bb:50:dd:95:13",
+          "ports": [],
+          "type": "unknown",
+          "category": "lighting",
+          "device_type": "wiz",
+          "capabilities": []
+        }
+      ],
+      "unknown": [
+        {
+          "ip": "10.0.0.29",
+          "hostname": "espressif.catori",
+          "mac": "d0:3f:27:08:f7:af",
+          "ports": [],
+          "type": "unknown",
+          "category": "unknown",
+          "device_type": "unidentified",
+          "capabilities": []
+        },
+        {
+          "ip": "10.0.0.33",
+          "hostname": null,
+          "mac": "d0:21:f9:76:50:d2",
+          "ports": [
+            22
+          ],
+          "type": "unknown",
+          "category": "unknown",
+          "device_type": "unidentified",
+          "capabilities": []
+        },
+        {
+          "ip": "10.0.0.35",
+          "hostname": "poppity.catori",
+          "mac": null,
+          "ports": [
+            22
+          ],
+          "type": "unknown",
+          "category": "unknown",
+          "device_type": "unidentified",
+          "capabilities": []
+        },
+        {
+          "ip": "10.0.0.60",
+          "hostname": "poppity",
+          "mac": null,
+          "ports": [
+            22
+          ],
+          "type": "unknown",
+          "category": "unknown",
+          "device_type": "unidentified",
+          "capabilities": []
+        },
+        {
+          "ip": "10.0.0.65",
+          "hostname": "BRWEC5C687AE761.catori",
+          "mac": "ec:5c:68:7a:e7:61",
+          "ports": [
+            80,
+            443
+          ],
+          "type": "unknown",
+          "category": "unknown",
+          "device_type": "unidentified",
+          "capabilities": [
+            "https_interface"
+          ]
+        },
+        {
+          "ip": "10.0.0.73",
+          "hostname": null,
+          "mac": "00:f6:20:7d:73:56",
+          "ports": [
+            8443
+          ],
+          "type": "unknown",
+          "category": "unknown",
+          "device_type": "unidentified",
+          "capabilities": []
+        },
+        {
+          "ip": "10.0.0.112",
+          "hostname": "lwip.catori",
+          "mac": "2c:aa:8e:56:bb:db",
+          "ports": [],
+          "type": "unknown",
+          "category": "unknown",
+          "device_type": "unidentified",
+          "capabilities": []
+        },
+        {
+          "ip": "10.0.0.120",
+          "hostname": "net_ac_7770.catori",
+          "mac": "ac:93:c4:18:77:70",
+          "ports": [],
+          "type": "unknown",
+          "category": "unknown",
+          "device_type": "unidentified",
+          "capabilities": []
+        },
+        {
+          "ip": "10.0.0.172",
+          "hostname": "front-yard-cam.catori",
+          "mac": "78:45:58:3f:16:67",
+          "ports": [
+            80,
+            443
+          ],
+          "type": "unknown",
+          "category": "unknown",
+          "device_type": "unidentified",
+          "capabilities": [
+            "https_interface"
+          ]
+        },
+        {
+          "ip": "10.0.0.177",
+          "hostname": "back-yard-cam.catori",
+          "mac": "d0:21:f9:91:25:da",
+          "ports": [
+            80,
+            443
+          ],
+          "type": "unknown",
+          "category": "unknown",
+          "device_type": "unidentified",
+          "capabilities": [
+            "https_interface"
+          ]
+        },
+        {
+          "ip": "10.0.0.213",
+          "hostname": null,
+          "mac": "10:5a:17:fe:1d:3b",
+          "ports": [],
+          "type": "unknown",
+          "category": "unknown",
+          "device_type": "unidentified",
+          "capabilities": []
+        }
+      ],
+      "router": [
+        {
+          "ip": "10.0.0.36",
+          "hostname": null,
+          "mac": "68:d7:9a:c6:d8:c8",
+          "ports": [
+            22,
+            53,
+            80,
+            443
+          ],
+          "type": "unknown",
+          "category": "router",
+          "device_type": "network_device",
+          "capabilities": [
+            "https_interface"
+          ]
+        },
+        {
+          "ip": "10.0.0.147",
+          "hostname": null,
+          "mac": "68:d7:9a:39:e0:47",
+          "ports": [
+            22,
+            53,
+            80,
+            443
+          ],
+          "type": "unknown",
+          "category": "router",
+          "device_type": "network_device",
+          "capabilities": [
+            "https_interface"
+          ]
+        },
+        {
+          "ip": "10.0.0.201",
+          "hostname": "hc4-omv-1.catori",
+          "mac": "00:1e:06:49:1d:4a",
+          "ports": [
+            22,
+            80,
+            443
+          ],
+          "type": "unknown",
+          "category": "router",
+          "device_type": "network_device",
+          "capabilities": [
+            "https_interface"
+          ]
+        }
+      ]
+    },
+    "integration_ready": [
+      {
+        "ip": "10.0.0.16",
+        "hostname": "wiz_979697.catori",
+        "mac": "a8:bb:50:97:96:97",
+        "ports": [],
+        "type": "unknown",
+        "category": "lighting",
+        "device_type": "wiz",
+        "capabilities": []
+      },
+      {
+        "ip": "10.0.0.102",
+        "hostname": "wiz_8fdbc6.catori",
+        "mac": "a8:bb:50:8f:db:c6",
+        "ports": [],
+        "type": "unknown",
+        "category": "lighting",
+        "device_type": "wiz",
+        "capabilities": []
+      },
+      {
+        "ip": "10.0.0.115",
+        "hostname": "wiz_97359e.catori",
+        "mac": "a8:bb:50:97:35:9e",
+        "ports": [],
+        "type": "unknown",
+        "category": "lighting",
+        "device_type": "wiz",
+        "capabilities": []
+      },
+      {
+        "ip": "10.0.0.221",
+        "hostname": "wiz_dd9513.catori",
+        "mac": "a8:bb:50:dd:95:13",
+        "ports": [],
+        "type": "unknown",
+        "category": "lighting",
+        "device_type": "wiz",
+        "capabilities": []
+      }
+    ],
+    "needs_investigation": [
+      {
+        "ip": "10.0.0.29",
+        "hostname": "espressif.catori",
+        "mac": "d0:3f:27:08:f7:af",
+        "ports": [],
+        "type": "unknown",
+        "category": "unknown",
+        "device_type": "unidentified",
+        "capabilities": []
+      },
+      {
+        "ip": "10.0.0.33",
+        "hostname": null,
+        "mac": "d0:21:f9:76:50:d2",
+        "ports": [
+          22
+        ],
+        "type": "unknown",
+        "category": "unknown",
+        "device_type": "unidentified",
+        "capabilities": []
+      },
+      {
+        "ip": "10.0.0.35",
+        "hostname": "poppity.catori",
+        "mac": null,
+        "ports": [
+          22
+        ],
+        "type": "unknown",
+        "category": "unknown",
+        "device_type": "unidentified",
+        "capabilities": []
+      },
+      {
+        "ip": "10.0.0.60",
+        "hostname": "poppity",
+        "mac": null,
+        "ports": [
+          22
+        ],
+        "type": "unknown",
+        "category": "unknown",
+        "device_type": "unidentified",
+        "capabilities": []
+      },
+      {
+        "ip": "10.0.0.65",
+        "hostname": "BRWEC5C687AE761.catori",
+        "mac": "ec:5c:68:7a:e7:61",
+        "ports": [
+          80,
+          443
+        ],
+        "type": "unknown",
+        "category": "unknown",
+        "device_type": "unidentified",
+        "capabilities": [
+          "https_interface"
+        ]
+      },
+      {
+        "ip": "10.0.0.73",
+        "hostname": null,
+        "mac": "00:f6:20:7d:73:56",
+        "ports": [
+          8443
+        ],
+        "type": "unknown",
+        "category": "unknown",
+        "device_type": "unidentified",
+        "capabilities": []
+      },
+      {
+        "ip": "10.0.0.112",
+        "hostname": "lwip.catori",
+        "mac": "2c:aa:8e:56:bb:db",
+        "ports": [],
+        "type": "unknown",
+        "category": "unknown",
+        "device_type": "unidentified",
+        "capabilities": []
+      },
+      {
+        "ip": "10.0.0.120",
+        "hostname": "net_ac_7770.catori",
+        "mac": "ac:93:c4:18:77:70",
+        "ports": [],
+        "type": "unknown",
+        "category": "unknown",
+        "device_type": "unidentified",
+        "capabilities": []
+      },
+      {
+        "ip": "10.0.0.172",
+        "hostname": "front-yard-cam.catori",
+        "mac": "78:45:58:3f:16:67",
+        "ports": [
+          80,
+          443
+        ],
+        "type": "unknown",
+        "category": "unknown",
+        "device_type": "unidentified",
+        "capabilities": [
+          "https_interface"
+        ]
+      },
+      {
+        "ip": "10.0.0.177",
+        "hostname": "back-yard-cam.catori",
+        "mac": "d0:21:f9:91:25:da",
+        "ports": [
+          80,
+          443
+        ],
+        "type": "unknown",
+        "category": "unknown",
+        "device_type": "unidentified",
+        "capabilities": [
+          "https_interface"
+        ]
+      },
+      {
+        "ip": "10.0.0.213",
+        "hostname": null,
+        "mac": "10:5a:17:fe:1d:3b",
+        "ports": [],
+        "type": "unknown",
+        "category": "unknown",
+        "device_type": "unidentified",
+        "capabilities": []
+      }
+    ],
+    "recommendations": [
+      "\ud83d\udee0\ufe0f Lighting devices found - can implement voice control immediately",
+      "\ud83d\udd0d 11 unknown devices need manual identification"
+    ]
+  }
+}

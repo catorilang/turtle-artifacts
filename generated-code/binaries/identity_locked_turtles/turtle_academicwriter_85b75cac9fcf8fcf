@@ -1,0 +1,235 @@
+#!/usr/bin/env python3
+"""
+🔐 IDENTITY-LOCKED TURTLE: AcademicWriter
+Generated: 2025-08-30 04:28:07
+Purpose: Rigorous academic research and writing
+Hash: 85b75cac9fcf8fcf
+Mode Hash: 18dd6dd797cca0cdf1657b74436fb78d101891fcbebd742f5510fcdc6978266d
+
+TAMPER WARNING: This binary has embedded identity and conversational mode lockdown.
+Any modification will break identity verification and disable the turtle.
+"""
+
+import sys
+import json
+import hashlib
+import time
+from typing import Dict, Any, List, Tuple
+
+# EMBEDDED LOCKED CONFIGURATION - DO NOT MODIFY
+LOCKED_IDENTITY_HASH = "85b75cac9fcf8fcf"
+LOCKED_MODE_HASH = "18dd6dd797cca0cdf1657b74436fb78d101891fcbebd742f5510fcdc6978266d"
+LOCKED_MODE_DATA = """{"name":"Academic Rigorous Mode","party_context":"Academic research discussion","style":"professional","knowledge_depth":"expert","response_pattern":"analytical","enthusiasm_level":0.6,"formality_level":0.8,"technical_depth":0.9,"primary_topics":["research_methodology","academic_rigor","peer_review"],"secondary_topics":[],"topic_strictness":0.7,"connection_patterns":[],"redirection_patterns":[],"persona_traits":{},"conversation_goals":["Maintain scholarly precision","Cite relevant literature","Use proper methodology"]}"""
+
+AUTHORIZED_PARTIES = ["human", "research_team", "co_authors"]
+MANDATORY_TOPICS = ["entropy_reduction", "academic_research", "peer_review"]
+FORBIDDEN_TOPICS = []
+CREATION_TIME = "2025-08-30 04:28:07"
+PURPOSE = "Rigorous academic research and writing"
+EXPIRATION_TIME = "None"
+
+# Identity enforcement flags
+TAMPER_DETECTION_ENABLED = True
+MODE_MODIFICATION_LOCKED = True
+TOPIC_DRIFT_PREVENTION = True
+
+class IdentityLockedTurtle:
+    """Identity-locked turtle with embedded conversational mode"""
+    
+    def __init__(self):
+        self.identity_verified = False
+        self.mode_data = None
+        self.startup_time = time.strftime("%Y-%m-%d %H:%M:%S")
+        
+        # Verify identity integrity on startup
+        if not self._verify_identity_integrity():
+            print("🚨 IDENTITY VERIFICATION FAILED - TURTLE DISABLED")
+            sys.exit(1)
+        
+        print(f"🔐 IDENTITY-LOCKED TURTLE ACTIVATED")
+        print(f"   Identity: {LOCKED_IDENTITY_HASH}")
+        print(f"   Purpose: {PURPOSE}")
+        print(f"   Mode: {self.mode_data['name']}")
+        print(f"   Authorized Parties: {', '.join(AUTHORIZED_PARTIES)}")
+        
+        # Activate locked conversational mode
+        self._activate_locked_mode()
+    
+    def _verify_identity_integrity(self) -> bool:
+        """Verify turtle identity and configuration integrity"""
+        if not TAMPER_DETECTION_ENABLED:
+            self.identity_verified = True
+            self.mode_data = json.loads(LOCKED_MODE_DATA)
+            return True
+        
+        # Verify mode data hash
+        calculated_hash = hashlib.sha256(LOCKED_MODE_DATA.encode()).hexdigest()
+        if calculated_hash != LOCKED_MODE_HASH:
+            print("🚨 MODE DATA TAMPERED - HASH MISMATCH")
+            return False
+        
+        # Check expiration
+        if EXPIRATION_TIME:
+            import datetime
+            expiry = datetime.datetime.strptime(EXPIRATION_TIME, "%Y-%m-%d %H:%M:%S")
+            if datetime.datetime.now() > expiry:
+                print("🚨 TURTLE IDENTITY EXPIRED")
+                return False
+        
+        self.identity_verified = True
+        self.mode_data = json.loads(LOCKED_MODE_DATA)
+        return True
+    
+    def _activate_locked_mode(self):
+        """Activate the embedded conversational mode"""
+        if not self.identity_verified:
+            return
+        
+        print(f"🎭 LOCKED MODE ACTIVATED: {self.mode_data['name']}")
+        print(f"   Style: {self.mode_data['style']}")
+        print(f"   Topics: {', '.join(self.mode_data['primary_topics'])}")
+        print(f"   Strictness: {self.mode_data['topic_strictness']}")
+    
+    def process_query(self, query: str, speaker: str = "human") -> Tuple[bool, str, str]:
+        """Process query through locked conversational mode"""
+        if not self.identity_verified:
+            return False, "🚨 IDENTITY NOT VERIFIED - QUERY BLOCKED", ""
+        
+        # Check authorized parties
+        if speaker not in AUTHORIZED_PARTIES and "human" not in AUTHORIZED_PARTIES:
+            return False, f"🚨 UNAUTHORIZED PARTY: {speaker} - ACCESS DENIED", ""
+        
+        # Check forbidden topics
+        query_lower = query.lower()
+        for forbidden in FORBIDDEN_TOPICS:
+            if forbidden.lower() in query_lower:
+                return False, f"⛔ FORBIDDEN TOPIC DETECTED: {forbidden} - QUERY BLOCKED", ""
+        
+        # Topic relevance check
+        if TOPIC_DRIFT_PREVENTION and self.mode_data['primary_topics']:
+            if not self._is_query_relevant(query):
+                # Generate locked redirection
+                redirection = self._generate_locked_redirection(query)
+                return False, redirection, self.mode_data['style']
+        
+        # Query approved - generate response context
+        response_context = {
+            "identity": LOCKED_IDENTITY_HASH,
+            "mode": self.mode_data['name'],
+            "style": self.mode_data['style'],
+            "enthusiasm": self.mode_data['enthusiasm_level'],
+            "formality": self.mode_data['formality_level'],
+            "technical_depth": self.mode_data['technical_depth'],
+            "primary_topics": self.mode_data['primary_topics'],
+            "persona_traits": self.mode_data['persona_traits']
+        }
+        
+        return True, "✅ QUERY APPROVED", json.dumps(response_context)
+    
+    def _is_query_relevant(self, query: str) -> bool:
+        """Check if query is relevant to locked topics"""
+        query_lower = query.lower()
+        
+        # Check primary topics
+        primary_matches = 0
+        for topic in self.mode_data['primary_topics']:
+            if topic.lower().replace('_', ' ') in query_lower:
+                primary_matches += 1
+        
+        # Check secondary topics
+        secondary_matches = 0
+        for topic in self.mode_data.get('secondary_topics', []):
+            if topic.lower().replace('_', ' ') in query_lower:
+                secondary_matches += 1
+        
+        # Determine relevance based on strictness
+        strictness = self.mode_data['topic_strictness']
+        
+        if strictness >= 0.9:  # Very strict - require primary topic match
+            return primary_matches > 0
+        elif strictness >= 0.7:  # Moderate - primary or multiple secondary
+            return primary_matches > 0 or secondary_matches >= 2
+        else:  # Flexible - any topic match
+            return primary_matches > 0 or secondary_matches > 0
+    
+    def _generate_locked_redirection(self, query: str) -> str:
+        """Generate redirection message based on locked mode"""
+        if self.mode_data['redirection_patterns']:
+            pattern = self.mode_data['redirection_patterns'][0]
+            return pattern.format(topic=', '.join(self.mode_data['primary_topics']))
+        
+        # Default redirection based on style
+        style = self.mode_data['style']
+        topics = ', '.join(self.mode_data['primary_topics'])
+        
+        if style == 'obsessed':
+            return f"🔥 I can't think about anything except {topics}! How does your question relate to this fascinating research?"
+        elif style == 'professional':
+            return f"🎯 This turtle is locked to {topics}. Please rephrase your question to relate to these areas."
+        else:
+            return f"🔒 Topic lockdown active: {topics}. Let's focus on these areas instead."
+    
+    def get_identity_status(self) -> Dict[str, Any]:
+        """Get current identity and mode status"""
+        return {
+            "identity_verified": self.identity_verified,
+            "identity_hash": LOCKED_IDENTITY_HASH,
+            "purpose": PURPOSE,
+            "authorized_parties": AUTHORIZED_PARTIES,
+            "locked_mode": self.mode_data['name'] if self.mode_data else None,
+            "primary_topics": self.mode_data['primary_topics'] if self.mode_data else [],
+            "creation_time": CREATION_TIME,
+            "startup_time": self.startup_time,
+            "tamper_detection": TAMPER_DETECTION_ENABLED,
+            "mode_locked": MODE_MODIFICATION_LOCKED,
+            "drift_prevention": TOPIC_DRIFT_PREVENTION
+        }
+
+def main():
+    """Main turtle execution"""
+    print("🐢 IDENTITY-LOCKED TURTLE STARTING...")
+    
+    turtle = IdentityLockedTurtle()
+    
+    if len(sys.argv) > 1:
+        # Process command line query
+        query = " ".join(sys.argv[1:])
+        allowed, message, context = turtle.process_query(query)
+        
+        print(f"Query: {query}")
+        print(f"Result: {message}")
+        if context:
+            print(f"Context: {context}")
+    else:
+        # Interactive mode
+        print(f"🔐 Interactive mode - Identity: {LOCKED_IDENTITY_HASH}")
+        print(f"📋 Purpose: {PURPOSE}")
+        print(f"🎭 Mode: {turtle.mode_data['name']}")
+        print("Type 'status' for identity status, 'quit' to exit\n")
+        
+        while True:
+            try:
+                query = input("🐢 > ").strip()
+                
+                if query.lower() in ['quit', 'exit']:
+                    break
+                elif query.lower() == 'status':
+                    status = turtle.get_identity_status()
+                    print(json.dumps(status, indent=2))
+                    continue
+                
+                allowed, message, context = turtle.process_query(query)
+                print(f"{message}")
+                if context and context != "":
+                    context_data = json.loads(context)
+                    print(f"[{context_data['style']}] [{context_data['mode']}]")
+                
+            except KeyboardInterrupt:
+                break
+            except Exception as e:
+                print(f"🚨 Error: {e}")
+    
+    print("🐢 IDENTITY-LOCKED TURTLE SHUTDOWN")
+
+if __name__ == "__main__":
+    main()

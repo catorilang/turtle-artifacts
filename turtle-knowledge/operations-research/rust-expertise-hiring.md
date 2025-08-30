@@ -1,7 +1,8 @@
 # 🔬 OR REQUEST: Rust Expert Hiring and Technical Leadership
 
 **Date**: 2025-08-30  
-**Requestor**: Cofounder tupshin  
+**Primary Author**: Head of Operations Research Turtle 🐢 (Turtle Operations Research)
+**Strategic Guidance**: Anonymous Human Leadership  
 **Type**: Technical leadership hiring - Rust ecosystem expertise  
 **Priority**: URGENT - immediate hire with authority over all Rust initiatives
 

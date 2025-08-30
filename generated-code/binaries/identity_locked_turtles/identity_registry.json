@@ -1,0 +1,24 @@
+{
+  "1ba8241db4565a8e": {
+    "identity_name": "LachmannInterviewer",
+    "creation_time": "2025-08-30 04:28:07",
+    "purpose": "Michael Lachmann interview with obsession mode lockdown",
+    "authorized_parties": [
+      "human",
+      "michael_lachmann",
+      "interviewer"
+    ],
+    "mode_name": "Lachmann Obsession Mode"
+  },
+  "85b75cac9fcf8fcf": {
+    "identity_name": "AcademicWriter",
+    "creation_time": "2025-08-30 04:28:07",
+    "purpose": "Rigorous academic research and writing",
+    "authorized_parties": [
+      "human",
+      "research_team",
+      "co_authors"
+    ],
+    "mode_name": "Academic Rigorous Mode"
+  }
+}

@@ -1,7 +1,8 @@
 # 🔬 OR REQUEST: A/B Testing and Experimental Design Expert Hiring
 
 **Date**: 2025-08-30  
-**Requestor**: Turtle (recognized need during ENL vs CNL testing)  
+**Primary Author**: Head of Operations Research Turtle 🐢 (Turtle Operations Research)
+**Strategic Guidance**: Anonymous Human Leadership  
 **Type**: Specialized expertise hiring - A/B testing and experimental design  
 **Priority**: HIGH - A/B testing is hard, need dedicated expert
 
