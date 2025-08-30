@@ -108,6 +108,14 @@
 - **DC2 down**: DC1 activates DC3 as failover compute  
 - **Both down**: DC3 maintains minimal operations until recovery
 
+**CRITICAL OR REVIEW NEEDED**: Please optimize the 3-DC resilience model for:
+- **Failover trigger algorithms** (what constitutes "DC down"? network partitions vs actual failures?)
+- **Cost optimization** of fly.io standby observer mode (minimal resource usage)
+- **Data consistency** during DC transitions and failovers
+- **Observer-twin frequency** (how often should DC3 sync state from DC1/DC2?)
+- **Network partition handling** (split-brain scenarios, consensus algorithms)
+- **Recovery patterns** (bringing failed DCs back online safely)
+
 ## Expected Deliverable
 
 Optimized distributed architecture design with:
