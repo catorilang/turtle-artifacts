@@ -97,24 +97,24 @@
 - **Resources**: OpenWRT-based infrastructure
 - **Reliability**: Lower performance but higher availability
 
-### DC3: Fly.io (Standby Observer)
-- **Role**: Pure observability twin of active DCs, emergency failover
-- **Resources**: Minimal - just information twinning, no workers
-- **Activation**: Only when DC1 or DC2 detects peer failure
+### DC3: Fly.io (Read-Only Observer with Active Twinning)
+- **Role**: Always-on observer with full twinning of DC1 and DC2, read-only mode
+- **Resources**: Continuous observation and data twinning, no new information creation
+- **Capabilities**: Can receive all information from DC1 and DC2, cannot create new information
 
-**Failover Logic**:
-- **Normal**: DC1 + DC2 both active, DC3 observes
-- **DC1 down**: DC2 activates DC3 as failover compute
-- **DC2 down**: DC1 activates DC3 as failover compute  
-- **Both down**: DC3 maintains minimal operations until recovery
+**Operational Logic**:
+- **Always-on**: DC1 + DC2 execute, DC3 continuously twins both with full observability
+- **Read-only constraint**: DC3 receives all information but creates none
+- **Active twinning**: DC3 maintains real-time copy of both DC1 and DC2 states  
+- **Coordination role**: DC3 can facilitate information exchange between DC1 and DC2
 
-**CRITICAL OR REVIEW NEEDED**: Please optimize the 3-DC resilience model for:
-- **Failover trigger algorithms** (what constitutes "DC down"? network partitions vs actual failures?)
-- **Cost optimization** of fly.io standby observer mode (minimal resource usage)
-- **Data consistency** during DC transitions and failovers
-- **Observer-twin frequency** (how often should DC3 sync state from DC1/DC2?)
-- **Network partition handling** (split-brain scenarios, consensus algorithms)
-- **Recovery patterns** (bringing failed DCs back online safely)
+**CRITICAL OR REVIEW NEEDED**: Please optimize the 3-DC active twinning model for:
+- **Twinning synchronization algorithms** (optimal frequency and methods for DC3 to twin DC1/DC2)
+- **Cost optimization** of fly.io continuous observer mode (read-only resource requirements)
+- **Data consistency** with always-on DC3 receiving information from both DC1 and DC2
+- **Information flow patterns** (how DC3 facilitates coordination between DC1 and DC2)
+- **Network partition resilience** (DC3 maintaining consistency during DC1/DC2 isolation)
+- **Observer performance** (how to minimize latency while maximizing observability)
 
 ## Expected Deliverable
 
