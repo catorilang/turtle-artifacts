@@ -1,0 +1,65 @@
+# Portfolio Generator - Sample Configuration
+# Copy this file and customize with your information
+
+# Personal Information
+name: "Alex Developer"
+title: "Full Stack Software Engineer"
+email: "alex@example.com"
+github: "alexdev"
+linkedin: "alexdeveloper"
+twitter: "alexcodes"  # Optional
+blog: "https://alexdev.blog"  # Optional
+timezone: "Eastern Time (ET)"
+availability: "Open to opportunities"
+availability_details: "Currently available for new projects and opportunities. Response time is typically within 24-48 hours for all inquiries."
+
+# Projects Showcase
+projects:
+  - name: "E-commerce Platform"
+    description: "Modern React-based online store with payment integration, inventory management, and admin dashboard. Built for scalability with microservices architecture."
+    tech: ["React", "Node.js", "MongoDB", "Stripe", "Docker", "AWS"]
+    url: "https://github.com/alexdev/ecommerce"
+    demo: "https://ecommerce-demo.alexdev.com"
+    highlights:
+      - "Processed over $100K in transactions"  
+      - "Mobile-first responsive design"
+      - "Real-time inventory tracking"
+      - "Automated testing with 95% coverage"
+      
+  - name: "Data Analytics Dashboard"  
+    description: "Python-powered business intelligence dashboard with interactive visualizations, real-time data processing, and automated reporting."
+    tech: ["Python", "Pandas", "Plotly", "Flask", "PostgreSQL", "Redis"]
+    url: "https://github.com/alexdev/analytics"
+    demo: "https://analytics-demo.alexdev.com"
+    highlights:
+      - "Processes 1M+ data points daily"
+      - "Interactive charts and filters"
+      - "Automated report generation"
+      - "Role-based access control"
+      
+  - name: "DevOps Automation Suite"
+    description: "Comprehensive DevOps toolkit for CI/CD pipeline automation, infrastructure management, and monitoring. Reduces deployment time by 80%."
+    tech: ["Docker", "Kubernetes", "Terraform", "GitHub Actions", "Prometheus", "Grafana"]
+    url: "https://github.com/alexdev/devops-suite"
+    highlights:
+      - "Zero-downtime deployments"
+      - "Auto-scaling infrastructure"
+      - "Comprehensive monitoring"
+      - "Cost optimization features"
+
+# Skills organized by category  
+skills:
+  - category: "Frontend Development"
+    items: ["React", "Vue.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Sass", "Webpack"]
+    
+  - category: "Backend Development"  
+    items: ["Node.js", "Python", "Java", "PHP", "Express.js", "Django", "Spring Boot", "RESTful APIs"]
+    
+  - category: "Databases"
+    items: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Elasticsearch", "Firebase"]
+    
+  - category: "DevOps & Cloud"
+    items: ["Docker", "Kubernetes", "AWS", "Google Cloud", "Terraform", "GitHub Actions", "Jenkins"]
+    
+  - category: "Tools & Methodologies"  
+    items: ["Git", "Agile", "Scrum", "TDD", "Code Review", "Performance Optimization", "Security Best Practices"]

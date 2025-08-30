@@ -1,0 +1,27 @@
+<!-- Portfolio Generator - Site Footer -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author.name | default: site.title }}. All rights reserved.</p>
+        <p>Built with Jekyll and deployed on GitHub Pages</p>
+        
+        <div class="social-links">
+            {% if site.author.email %}
+            <a href="mailto:{{ site.author.email }}" title="Email">📧</a>
+            {% endif %}
+            
+            {% if site.author.github %}
+            <a href="https://github.com/{{ site.author.github }}" target="_blank" title="GitHub">🚀</a>
+            {% endif %}
+            
+            {% if site.author.linkedin %}
+            <a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank" title="LinkedIn">💼</a>
+            {% endif %}
+            
+            {% if site.author.twitter %}
+            <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" title="Twitter">🐦</a>
+            {% endif %}
+        </div>
+        
+        <p><small>Generated with Portfolio Generator - Markdown-Driven Application</small></p>
+    </div>
+</footer>

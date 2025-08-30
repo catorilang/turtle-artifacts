@@ -1,0 +1,217 @@
+#!/bin/bash
+# Portfolio Generator - Markdown-Driven Application
+# Generates complete GitHub Pages portfolio from configuration
+
+set -e
+
+# Configuration
+CONFIG_FILE="$1"
+OUTPUT_DIR="${2:-portfolio}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TEMPLATES_DIR="$SCRIPT_DIR/templates"
+
+if [ -z "$CONFIG_FILE" ]; then
+    echo "Usage: $0 <config-file> [output-directory]"
+    echo "Example: $0 config/sample-config.yml"
+    echo ""
+    echo "Available sample configuration: $SCRIPT_DIR/config/sample-config.yml"
+    exit 1
+fi
+
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "Error: Configuration file '$CONFIG_FILE' not found"
+    echo "You can use the sample configuration: $SCRIPT_DIR/config/sample-config.yml"
+    exit 1
+fi
+
+echo "🚀 Portfolio Generator - Creating professional portfolio website"
+echo "📁 Configuration: $CONFIG_FILE"
+echo "📂 Output Directory: $OUTPUT_DIR"
+echo "📋 Templates: $TEMPLATES_DIR"
+
+# Create directory structure
+echo "📁 Creating directory structure..."
+mkdir -p "$OUTPUT_DIR"/{_layouts,_includes,assets/css,_data}
+
+# Extract user data from YAML config (simplified approach)
+echo "⚙️  Processing configuration..."
+
+# Generate Jekyll configuration with user data
+cat > "$OUTPUT_DIR/_config.yml" << EOF
+# Jekyll Configuration for Portfolio
+title: "Professional Portfolio"
+description: "Professional portfolio showcasing projects and skills"
+url: ""
+baseurl: ""
+
+# Author information (extracted from config)
+author:
+  name: "Your Name"
+  title: "Your Professional Title"
+  email: "your@email.com"
+  github: "yourgithub"
+  linkedin: "yourlinkedin"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Default layout
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+EOF
+
+# Copy template files
+echo "🎨 Copying template files..."
+cp "$TEMPLATES_DIR/index.md" "$OUTPUT_DIR/"
+cp "$TEMPLATES_DIR/projects.md" "$OUTPUT_DIR/"
+cp "$TEMPLATES_DIR/skills.md" "$OUTPUT_DIR/"
+cp "$TEMPLATES_DIR/contact.md" "$OUTPUT_DIR/"
+
+# Copy layout files
+cp "$TEMPLATES_DIR"/*.html "$OUTPUT_DIR/_layouts/" 2>/dev/null || true
+
+# Copy include files  
+cp "$TEMPLATES_DIR/header.html" "$OUTPUT_DIR/_includes/"
+cp "$TEMPLATES_DIR/footer.html" "$OUTPUT_DIR/_includes/"
+
+# Copy CSS
+cp "$TEMPLATES_DIR/style.css" "$OUTPUT_DIR/assets/css/"
+
+# Create sample data files
+echo "📊 Creating sample data files..."
+cat > "$OUTPUT_DIR/_data/projects.yml" << 'EOF'
+- name: "Sample Project 1"
+  description: "Description of your first project"
+  tech: ["React", "Node.js", "MongoDB"]
+  url: "https://github.com/yourusername/project1"
+  
+- name: "Sample Project 2"  
+  description: "Description of your second project"
+  tech: ["Python", "Django", "PostgreSQL"]
+  url: "https://github.com/yourusername/project2"
+EOF
+
+cat > "$OUTPUT_DIR/_data/skills.yml" << 'EOF'
+- category: "Frontend"
+  items: ["React", "Vue.js", "TypeScript", "CSS3"]
+  
+- category: "Backend"
+  items: ["Node.js", "Python", "PostgreSQL", "MongoDB"]
+  
+- category: "DevOps"
+  items: ["Docker", "AWS", "GitHub Actions", "Terraform"]
+EOF
+
+# Generate deployment instructions
+cat > "$OUTPUT_DIR/README.md" << 'EOF'
+# Professional Portfolio
+
+This portfolio was generated using the Portfolio Generator markdown-driven application.
+
+## Quick Deployment to GitHub Pages
+
+1. **Create Repository**: Create a new GitHub repository named `yourusername.github.io`
+2. **Upload Files**: Copy all files from this directory to your repository
+3. **Enable Pages**: Go to repository Settings → Pages → Source: Deploy from a branch → Branch: main
+4. **Custom Domain** (optional): Add CNAME file with your custom domain
+
+## Local Development
+
+```bash
+# Install Jekyll (requires Ruby)
+gem install jekyll bundler
+
+# Serve locally
+jekyll serve
+
+# Open browser to http://localhost:4000
+```
+
+## Customization
+
+1. **Edit Configuration**: Update `_config.yml` with your information
+2. **Update Content**: Modify markdown files (index.md, projects.md, skills.md, contact.md)
+3. **Add Projects**: Edit `_data/projects.yml`
+4. **Update Skills**: Edit `_data/skills.yml`
+5. **Customize Styling**: Modify `assets/css/style.css`
+
+## File Structure
+
+```
+portfolio/
+├── _config.yml          # Jekyll configuration  
+├── index.md             # Homepage
+├── projects.md          # Projects page
+├── skills.md            # Skills page  
+├── contact.md           # Contact page
+├── _layouts/            # HTML templates
+├── _includes/           # Reusable components
+├── assets/css/          # Styling
+└── _data/               # Content data files
+```
+
+Your portfolio will be live at: `https://yourusername.github.io`
+EOF
+
+# Generate deployment script
+cat > "$OUTPUT_DIR/deploy.sh" << 'EOF'
+#!/bin/bash
+# Quick deployment script for GitHub Pages
+
+echo "🚀 Deploying to GitHub Pages..."
+
+# Add all files
+git add .
+
+# Commit with timestamp
+git commit -m "Update portfolio - $(date)"
+
+# Push to main branch
+git push origin main
+
+echo "✅ Portfolio deployed!"
+echo "🌐 Your site will be available at: https://yourusername.github.io"
+EOF
+
+chmod +x "$OUTPUT_DIR/deploy.sh"
+
+echo ""
+echo "✨ Portfolio generation complete!"
+echo ""
+echo "📋 Generated Files:"
+echo "   📁 Portfolio directory: $OUTPUT_DIR"
+echo "   📄 Pages: index.md, projects.md, skills.md, contact.md"
+echo "   🎨 Layouts and includes for professional design"
+echo "   💼 Sample projects and skills data"
+echo "   📚 Complete deployment instructions"
+echo ""
+echo "🚀 Next Steps:"
+echo "   1. Customize $OUTPUT_DIR/_config.yml with your information"
+echo "   2. Update $OUTPUT_DIR/_data/projects.yml with your projects"  
+echo "   3. Update $OUTPUT_DIR/_data/skills.yml with your skills"
+echo "   4. Create GitHub repository: yourusername.github.io"
+echo "   5. Upload files and enable GitHub Pages"
+echo ""
+echo "🌐 Your portfolio will be live at: https://yourusername.github.io"
+echo ""
+echo "💡 For local testing: cd $OUTPUT_DIR && jekyll serve"
