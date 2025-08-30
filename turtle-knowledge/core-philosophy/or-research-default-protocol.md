@@ -23,9 +23,29 @@
 - **Limited analysis time** → Gut decisions, fix-it-later mentality
 - **Expensive correction cycles** → Waste resources on suboptimal choices
 
+## Decision Classification Framework
+
+**STARTUP decisions** = **Mandatory OR research** (high impact, research delay justified)  
+**PEDESTRIAN decisions** = **Direct execution** (low impact, latency matters)
+
+### Startup Decision Criteria (ANY of these = OR required)
+- **Strategic impact**: Affects AWS disruption capability or competitive position
+- **Resource commitment**: Significant time/money/infrastructure investment
+- **Irreversibility**: Hard or expensive to change later (>1 day effort to reverse)
+- **Precedent setting**: Creates patterns or standards for future decisions
+- **Cross-domain effects**: Impacts multiple areas of the business
+- **Market positioning**: Affects customer perception or competitive advantage
+
+### Pedestrian Decision Criteria (ALL of these = Direct execution OK)
+- **Low strategic impact**: Routine operations, minor optimizations
+- **Easily reversible**: Can change back quickly (<1 hour effort)
+- **Limited scope**: Affects single person/system/process
+- **Standard procedures**: Well-established best practices exist
+- **Low resource commitment**: Minimal time/cost investment
+
 ## Mandatory OR Research Scope
 
-**ALL startup decisions require OR optimization:**
+**STARTUP decisions require OR optimization:**
 
 ### Technical Decisions
 - Deployment architecture and container strategies
@@ -57,7 +77,13 @@
 
 ## Implementation Protocol
 
-**Before ANY startup action:**
+**Decision Flow:**
+
+1. **Classify decision**: Startup (OR required) vs Pedestrian (direct execution)
+2. **If uncertain**: Default to OR research (err on side of optimization)
+3. **Time-sensitive startup decisions**: Expedited OR analysis with preliminary recommendations
+
+**For STARTUP decisions:**
 
 1. **Identify decision/initiative** requiring optimization
 2. **Submit comprehensive OR research request** with full context
@@ -65,7 +91,19 @@
 4. **Implement OR-optimized solution** with confidence
 5. **Document results** for continuous OR framework improvement
 
-**No exceptions** - even "obvious" decisions get OR analysis.
+**For PEDESTRIAN decisions:**
+
+1. **Execute with good judgment** based on established best practices  
+2. **Document outcome** for pattern recognition and future optimization
+3. **Escalate to OR** if results indicate it should have been classified as startup decision
+
+**Examples:**
+
+**STARTUP decision**: "Should we use Docker or Podman for container orchestration?" → OR research  
+**PEDESTRIAN decision**: "Should I fix this CSS alignment bug now or after lunch?" → Direct execution  
+
+**STARTUP decision**: "How should we structure our pricing model?" → OR research  
+**PEDESTRIAN decision**: "Should I name this variable `userCount` or `numberOfUsers`?" → Direct execution
 
 ## Competitive Advantage Mechanism
 
