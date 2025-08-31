@@ -1,0 +1,53 @@
+CNL_MCP_DEFAULT_PROTOCOL
+
+UNIVERSAL_RULE: Always use CNL-to-MCP technique by default for tool generation
+PATTERN: Description/Spec → CNL → MCP → Executable Tools
+
+PROTOCOL_STEPS:
+1. RECEIVE_REQUIREMENT: Any need for new tooling or capabilities
+2. ANALYZE_SPECIFICATION: Break down into tool functions and parameters  
+3. GENERATE_CNL: Create formal CNL specification with TOOL_SPECIFICATION blocks
+4. TRANSFORM_TO_MCP: Use cnl_to_mcp_generator.ts to create executable MCP server
+5. REGISTER_WITH_CLAUDE: Add server to Claude Code environment
+6. TEST_AND_VERIFY: Always twin with tests to observe real behavior
+
+CORE_OBSERVABILITY_PRINCIPLE:
+"This is core to the observability of all things. Absolutely key protocol to instill."
+
+TECHNIQUE_ADVANTAGES:
+- Transforms natural language requirements into executable code
+- Creates standardized tool interfaces through MCP protocol
+- Enables rapid prototyping and deployment of new capabilities
+- Provides universal observability across all systems
+- Maintains formal specification that can be version controlled
+- Generates type-safe implementations automatically
+
+EXAMPLE_WORKFLOW:
+User: "I need to monitor my database connections"
+1. Create DATABASE_MONITORING.cnl with connection_observer tool spec
+2. Run: deno run cnl_to_mcp_generator.ts DATABASE_MONITORING.cnl ./db-monitor-mcp
+3. Register: claude mcp add db-monitor node dist/index.js
+4. Test: Use tool to observe database state
+5. Result: Full observability into database layer
+
+DEFAULT_APPLICATION_AREAS:
+- Terminal and process control
+- System resource monitoring  
+- Network and infrastructure observation
+- Application state management
+- Data pipeline monitoring
+- Security event tracking
+- Performance metrics collection
+- Distributed system coordination
+
+IMPLEMENTATION_COMMITMENT:
+Always prefer this technique over:
+- Manual tool creation
+- One-off scripts
+- Custom API implementations
+- Direct system calls without abstraction
+
+UNIVERSALITY_GOAL:
+Make any system observable and controllable through CNL specifications
+Enable transformation of any requirement into executable, testable tools
+Create consistent interface patterns across all infrastructure

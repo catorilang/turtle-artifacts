@@ -1,0 +1,111 @@
+COMMAND_CONTROL_PIPELINE_SPECIFICATION
+
+UNIVERSAL_PATTERN: Natural Language Command → CNL Parsing → Direct System Control
+
+COMMAND_PARSER_RULES:
+  INPUT: "open slack on the top third of my second monitor"
+  PARSE_PATTERN: "open APP on POSITION of MONITOR"
+  EXTRACT: {app: "slack", position: "top-third", monitor: "second"}
+  NORMALIZE: {application: "slack", position: "top-third", monitor_index: 1}
+  
+DIRECT_CONTROL_ACTIONS:
+  WINDOW_LAUNCH:
+    COMMAND: "wmctrl -l; xrandr --query"
+    ANALYSIS: Detect available monitors and current windows
+    POSITION_CALCULATION: 
+      IF position == "top-third" AND monitor_index == 1:
+        GET monitor_1_geometry FROM xrandr
+        SET x = monitor_1_x + 0
+        SET y = monitor_1_y + 0  
+        SET width = monitor_1_width
+        SET height = monitor_1_height / 3
+    EXECUTION: "slack & sleep 2; wmctrl -r slack -e 0,x,y,width,height"
+    
+  WINDOW_MOVE:
+    DETECT: "wmctrl -l | grep APPLICATION_NAME"
+    CALCULATE: Position based on target specification
+    EXECUTE: "wmctrl -r APPLICATION_NAME -e 0,new_x,new_y,new_width,new_height"
+    
+  MONITOR_QUERY:
+    COMMAND: "xrandr --query | grep connected"
+    PARSE: Extract monitor names, resolutions, positions
+    FORMAT: Return structured monitor information
+
+COMMAND_MAPPINGS:
+  "open APP on POSITION of MONITOR" → WINDOW_LAUNCH(app=APP, position=POSITION, monitor=MONITOR)
+  "move APP to POSITION" → WINDOW_MOVE(app=APP, position=POSITION)
+  "show monitors" → MONITOR_QUERY()
+  "watch terminal ID" → TERMINAL_OBSERVE(terminal=ID)
+  "run COMMAND in terminal ID" → TERMINAL_EXECUTE(command=COMMAND, terminal=ID)
+
+POSITION_TRANSLATIONS:
+  "top-third" → {y_fraction: 0.0, height_fraction: 0.33}
+  "middle-third" → {y_fraction: 0.33, height_fraction: 0.33}  
+  "bottom-third" → {y_fraction: 0.67, height_fraction: 0.33}
+  "left-half" → {x_fraction: 0.0, width_fraction: 0.5}
+  "right-half" → {x_fraction: 0.5, width_fraction: 0.5}
+  "full-screen" → {x_fraction: 0.0, y_fraction: 0.0, width_fraction: 1.0, height_fraction: 1.0}
+
+MONITOR_REFERENCES:
+  "first", "primary", "main" → monitor_index: 0
+  "second", "secondary" → monitor_index: 1
+  "third" → monitor_index: 2
+  NUMBER → monitor_index: NUMBER - 1
+
+EXECUTION_PIPELINE:
+  1. RECEIVE_COMMAND: Parse natural language input
+  2. MATCH_PATTERN: Find matching command template
+  3. EXTRACT_PARAMETERS: Pull out variables (APP, POSITION, MONITOR)
+  4. NORMALIZE_VALUES: Convert to standard formats
+  5. CALCULATE_GEOMETRY: Compute exact pixel coordinates
+  6. EXECUTE_SYSTEM_CALLS: Run required system commands
+  7. VERIFY_RESULT: Check that action was successful
+  8. RETURN_STATUS: Report success/failure with details
+
+SYSTEM_INTERFACE:
+  X11_COMMANDS: ["wmctrl", "xrandr", "xwininfo", "xdotool"]
+  WAYLAND_COMMANDS: ["swaymsg", "wlr-randr"] 
+  MACOS_COMMANDS: ["osascript", "system_profiler"]
+  DETECTION: Auto-detect window manager and use appropriate tools
+
+REAL_EXAMPLE_EXECUTION:
+  INPUT: "open slack on the top third of my second monitor"
+  
+  STEP_1_PARSE: {application: "slack", position: "top-third", monitor_index: 1}
+  
+  STEP_2_DETECT_MONITORS: 
+    COMMAND: xrandr --query
+    RESULT: Monitor 0: 1920x1080+0+0, Monitor 1: 1920x1080+1920+0
+  
+  STEP_3_CALCULATE_POSITION:
+    monitor_1_x = 1920, monitor_1_y = 0
+    monitor_1_width = 1920, monitor_1_height = 1080
+    target_x = 1920 + 0 = 1920
+    target_y = 0 + 0 = 0  
+    target_width = 1920
+    target_height = 1080 / 3 = 360
+  
+  STEP_4_LAUNCH_AND_POSITION:
+    COMMAND_1: slack &
+    WAIT: sleep 2
+    COMMAND_2: wmctrl -r slack -e 0,1920,0,1920,360
+  
+  STEP_5_VERIFY:
+    COMMAND: wmctrl -l -G | grep slack
+    CHECK: Window positioned at correct coordinates
+  
+  RESULT: Slack opened in top third of second monitor at (1920,0) with size 1920x360
+
+SUCCESS_CRITERIA:
+- Command parsed correctly from natural language
+- System state detected accurately
+- Geometry calculated precisely  
+- Applications launched and positioned as requested
+- Final state verified and reported
+
+OBSERVABILITY_INTEGRATION:
+- Log all command transformations
+- Track system call execution  
+- Monitor window manager responses
+- Record positioning accuracy
+- Enable debugging of failed operations

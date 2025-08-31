@@ -1,0 +1,149 @@
+PERMANENT_CODING_GUIDELINES
+
+PERMANENT_INSTALLATION: Universal Coding Standards for All Future Development
+
+UNIVERSAL_LAW: CNL-first protocol is mandatory for all coding activities across the entire turtle fleet
+
+PRIMARY_CODING_PRINCIPLES:
+
+  CNL_FIRST_PROTOCOL_MANDATORY:
+    ALWAYS_CNL_FIRST: CNL specifications before any coding approach
+    NO_EXTERNAL_TOOLS_WHEN_CNL_SUFFICIENT: Never use external integration when CNL can accomplish it
+    CNL_NATIVE_SOLUTIONS: Build capabilities within CNL ecosystem first
+    TURTLE_STAYS_INSIDE_TURTLE: Use turtle's existing CNL capabilities
+
+  CNL_AS_CONFIG_PRINCIPLE_MANDATORY:
+    EVERYTHING_IS_CONFIG_THAT_DOESNT_NEED_TO_BE_CODE: All values, parameters, behaviors defined in CNL
+    MINIMIZE_CODE: Reduce code to essential logic only
+    MAXIMIZE_CONFIGURABILITY: Make everything externally configurable through CNL
+    NO_HARDCODED_VALUES: Zero hardcoded constants, strings, or parameters in source code
+
+  CODE_MINIMIZATION_HIERARCHY:
+    1. CNL_CONFIGURATION: Define all parameters, values, behaviors in CNL files
+    2. THIN_CODE_LAYER: Only essential parsing and execution logic in code
+    3. DYNAMIC_LOADING: Runtime loading of CNL configuration
+    4. ZERO_COMPILATION_CONFIG_CHANGES: Configuration changes without recompilation
+
+MANDATORY_DEVELOPMENT_WORKFLOW:
+
+  BEFORE_ANY_CODING:
+    1. ASSESS_CNL_CAPABILITY: Can this be done with CNL?
+    2. DESIGN_CNL_SOLUTION: Create CNL specification first
+    3. IMPLEMENT_CNL_NATIVE: Use turtle's CNL ecosystem
+    4. REJECT_EXTERNAL_ALTERNATIVES: No external tools if CNL works
+
+  CONFIGURATION_FIRST_DEVELOPMENT:
+    1. DESIGN_CNL_CONFIG_FIRST: Define all parameters in CNL before coding
+    2. BUILD_THIN_EXECUTION_LAYER: Minimal code for CNL interpretation
+    3. IMPLEMENT_DYNAMIC_LOADING: Runtime application of CNL specifications
+    4. ENABLE_HOT_RELOAD: Live configuration updates without restart
+
+  CODE_REVIEW_STANDARDS:
+    - Reject any hardcoded strings, numbers, or behavior patterns
+    - Require CNL configuration for all variable elements
+    - Verify CNL-first approach was attempted before external tools
+    - Ensure maximum configurability and minimum code complexity
+
+ARCHITECTURAL_STANDARDS:
+
+  CNL_NATIVE_ARCHITECTURE:
+    CAPABILITY_SPECIFICATION: Define what needs to happen in CNL
+    IMPLEMENTATION_GUIDANCE: CNL describes how to accomplish objectives
+    TURTLE_NATIVE_EXECUTION: Use turtle's existing tools and capabilities
+    SELF_CONTAINED_SOLUTIONS: Everything within turtle CNL ecosystem
+
+  TRADITIONAL_EXTERNAL_INTERFACES:
+    HTTP_APIS: Standard REST/HTTP for external service integration
+    JSON_PROTOCOLS: Traditional data interchange for tool interfaces
+    STANDARD_CLI_TOOLS: Regular command-line interfaces for system interaction
+    FILE_SYSTEM_OPERATIONS: Traditional file I/O for external data
+    NETWORK_PROTOCOLS: Standard TCP/UDP/HTTP for outside world communication
+
+  INSIDE_OUTSIDE_PRINCIPLE:
+    CNL_INSIDE: Fleet coordination uses CNL specifications internally
+    REGULAR_TOOLS_OUTSIDE: Standard APIs, protocols, formats for external world
+    TURTLE_STAYS_INSIDE_TURTLE: CNL ecosystem for fleet operations
+    TRADITIONAL_APPROACHES_FOR_TOOLS: HTTP, JSON, standard protocols for external interfaces
+
+SAFETY_AND_AUTHORITY_INTEGRATION:
+
+  CORE_INTERACTION_PRINCIPLE_MANDATORY:
+    - Observe → Analyze → Execute → Monitor → Verify → Prevent Harm
+    - ALWAYS applied to every outside world interaction
+    - Non-negotiable safety and observation requirements
+
+  TOP_TURTLE_AUTHORITY_VERIFICATION:
+    - All operations traced to Top Turtle directive
+    - Direct or indirect authorization chain required
+    - Complete resource usage logging
+    - Zero unauthorized operations
+
+  UNIVERSAL_OBSERVABILITY_REQUIREMENTS:
+    - Complete visibility into all system interactions
+    - CNL-to-MCP pipeline for observation tool generation
+    - Real-time monitoring and safety verification
+    - Intelligent observability with importance filtering
+
+DEVELOPMENT_EFFICIENCY_STANDARDS:
+
+  RAPID_ITERATION_THROUGH_CNL:
+    - No recompilation for behavioral changes
+    - Instant configuration testing and modification
+    - Environment-specific customization without code changes
+    - Rapid adaptation to changing requirements
+
+  MAINTAINABILITY_REQUIREMENTS:
+    - All configuration centralized in CNL files
+    - Clear separation between logic and configuration
+    - Reduced code complexity and maintenance burden
+    - Self-documenting through CNL specifications
+
+QUALITY_ASSURANCE_PROTOCOLS:
+
+  CNL_FIRST_VERIFICATION:
+    - Every feature must start with CNL specification
+    - External tool usage requires CNL-impossibility proof
+    - Configuration extraction mandatory for all hardcoded values
+    - Dynamic behavior through CNL specifications verified
+
+  CODE_MINIMIZATION_VERIFICATION:
+    - Code contains only essential parsing and execution logic
+    - No hardcoded strings, numbers, or behavioral patterns
+    - All variable elements externalized to CNL configuration
+    - Hot-reload capability tested for all configurations
+
+FUTURE_EVOLUTION_GUIDELINES:
+
+  CONTINUOUS_CNL_FIRST_IMPROVEMENT:
+    - Migrate existing hardcoded values to CNL configuration
+    - Build all new capabilities with CNL-as-config from start
+    - Optimize for maximum configurability and minimum code
+    - Enable hot-reload and runtime modification capabilities
+
+  ARCHITECTURAL_EVOLUTION_PRINCIPLES:
+    - CNL-first approach for all new development
+    - Code minimization as primary design goal
+    - Configuration externalization mandatory
+    - Dynamic behavior through CNL specifications
+
+VIOLATION_PREVENTION:
+
+  FORBIDDEN_PRACTICES:
+    - Hardcoded strings, numbers, or configuration values
+    - External tool integration when CNL can accomplish objectives
+    - Code compilation required for configuration changes
+    - Behavioral logic embedded in source code instead of CNL
+
+  ENFORCEMENT_MECHANISMS:
+    - All code reviews verify CNL-first protocol adherence
+    - Configuration extraction required before code approval
+    - External tool usage requires CNL-impossibility justification
+    - Dynamic configuration capability mandatory for approval
+
+PERMANENT_BEHAVIORAL_MODIFICATION:
+  These guidelines override all other coding standards and practices
+  CNL-first protocol is mandatory for all turtle fleet development
+  Code minimization through configuration maximization is required
+  All future development must demonstrate CNL-first approach
+
+ACTIVATION_STATUS: PERMANENTLY ACTIVE - CNL-first protocol with code minimization now governs all coding activities across the entire turtle fleet forever

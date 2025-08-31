@@ -1,0 +1,149 @@
+TURTLE_FLEET_CONFIG
+
+PERMANENT_INSTALLATION: CNL-based configuration for all turtle fleet operations
+
+UNIVERSAL_LAW: All turtle configuration defined through CNL specifications - no hardcoded values
+
+FLEET_DISCOVERY_CONFIG:
+
+  TURTLE_INFRASTRUCTURE_PATHS:
+    PRIMARY_TURTLE_PATH: /home/tupshin/turtle
+    RUST_PRIVATE_PATH: /home/tupshin/turtle-rust-private
+    TS_PRIVATE_PATH: /home/tupshin/turtle-ts-private
+    DOT_TURTLE_PATH: /home/tupshin/.turtle
+    
+  DISCOVERY_MECHANISMS:
+    PROCESS_DISCOVERY_PATTERN: turtle
+    INFRASTRUCTURE_SCAN_TIMEOUT: 5000
+    FLEET_COORDINATION_RETRY_COUNT: 3
+
+DISPLAY_AND_WINDOW_CONFIG:
+
+  MONITOR_CONFIGURATIONS:
+    PRIMARY_MONITOR:
+      INDEX: 0
+      BASE_X: 0
+      BASE_Y: 0  
+      WIDTH: 2560
+      HEIGHT: 1440
+      
+    SECONDARY_MONITOR:
+      INDEX: 1
+      BASE_X: 2560
+      BASE_Y: 0
+      WIDTH: 1200
+      HEIGHT: 1920
+      
+    DEFAULT_FALLBACK:
+      INDEX: 0
+      BASE_X: 0
+      BASE_Y: 0
+      WIDTH: 1920
+      HEIGHT: 1080
+
+  WINDOW_POSITIONING:
+    DEFAULT_TERMINAL_GEOMETRY: 160x60
+    DEFAULT_TERMINAL_ZOOM: 2
+    CENTER_OFFSET_X: 640
+    CENTER_OFFSET_Y: 360
+    
+  WINDOW_FRACTIONS:
+    TOP_THIRD: 0.33
+    MIDDLE_THIRD: 0.33  
+    BOTTOM_THIRD: 0.33
+    LEFT_HALF: 0.5
+    RIGHT_HALF: 0.5
+
+CLAUDE_INTEGRATION_CONFIG:
+
+  API_CONFIGURATION:
+    MODEL_NAME: claude-3-5-sonnet-20241022
+    MAX_TOKENS: 4096
+    API_VERSION: 2023-06-01
+    API_ENDPOINT: https://api.anthropic.com/v1/messages
+    
+  SYSTEM_PROMPT_TEMPLATE: |
+    You are Claude within the Smart Turtle Fleet - 28 turtles coordinated by Top Turtle.
+    You have complete observability and permission-free execution capabilities.
+    Current context: {context}
+    Apply Core Interaction Principle: Observe → Analyze → Execute → Monitor → Verify → Prevent Harm.
+    All operations serve Top Turtle's objectives through direct or indirect authorization chain.
+    Use CNL-native approaches for turtle fleet coordination, traditional tools for external interfaces.
+    Provide actionable turtle fleet intelligence and coordination recommendations.
+
+FLEET_COMMUNICATION_CONFIG:
+
+  FLEET_SIZE: 28
+  COORDINATION_PROTOCOL: CNL_NATIVE
+  COMMUNICATION_PATTERN: MESH_TOPOLOGY
+  DISCOVERY_INTERVAL: 30
+  HEALTH_CHECK_INTERVAL: 10
+  
+  MESH_COMMUNICATION_PORTS:
+    DISCOVERY_PORT: 8890
+    COORDINATION_PORT: 8891
+    OBSERVATION_PORT: 8892
+    INFERENCE_PORT: 8893
+
+SAFETY_AND_AUTHORITY_CONFIG:
+
+  RISK_LEVELS:
+    LOW_RISK_OPERATIONS: [SystemQuery, Help, Conversation]
+    MEDIUM_RISK_OPERATIONS: [WindowManagement, FleetStatus, FleetObservation]
+    HIGH_RISK_OPERATIONS: [ProcessControl, FleetCoordination, TopTurtleCommand]
+    
+  AUTHORITY_VERIFICATION:
+    TOP_TURTLE_AUTHORITY_REQUIRED: true
+    DIRECT_AUTHORIZATION_CHAIN: true
+    INDIRECT_AUTHORIZATION_CHAIN: true
+    RESOURCE_USAGE_LOGGING: true
+
+MESH_RESILIENCE_CONFIG:
+
+  DISCOVERY_MECHANISMS:
+    MDNS_DISCOVERY: true
+    DHT_DISCOVERY: true  
+    CONFIG_DISCOVERY: true
+    GOSSIP_DISCOVERY: true
+    
+  COMMUNICATION_REDUNDANCY:
+    WEBSOCKET_PRIMARY: true
+    WEBRTC_FALLBACK: true
+    HTTP_BACKUP: true
+    DIRECT_P2P: true
+    
+  RECOVERY_PARAMETERS:
+    NODE_FAILURE_TIMEOUT: 30
+    AUTOMATIC_RECOVERY: true
+    MESH_HEALING_INTERVAL: 60
+    CONNECTION_RETRY_COUNT: 5
+
+EFFICIENCY_OPTIMIZATION_CONFIG:
+
+  CONNECTION_MANAGEMENT:
+    CONNECTION_POOLING: true
+    PERSISTENT_CONNECTIONS: true
+    CONNECTION_REUSE: true
+    MAX_CONNECTIONS_PER_TURTLE: 10
+    
+  DATA_OPTIMIZATION:
+    MESSAGE_COMPRESSION: true
+    BATCH_PROCESSING: true
+    INTELLIGENT_ROUTING: true
+    LOAD_BALANCING: true
+
+STARTUP_BEHAVIOR_CONFIG:
+
+  TIME_BASED_STARTUP:
+    WORK_HOURS_START: 8
+    WORK_HOURS_END: 18
+    DEFAULT_WORK_MODE: WorkTime
+    DEFAULT_GENERAL_MODE: General
+    
+  FLEET_COORDINATION_STARTUP:
+    AUTO_DISCOVER_FLEET: true
+    DISPLAY_FLEET_STATUS: true
+    ENABLE_SMART_SUGGESTIONS: true
+    SHOW_COORDINATION_CAPABILITIES: true
+
+ACTIVATION_STATUS: PERMANENTLY ACTIVE - All turtle operations now use CNL-based configuration with no hardcoded values

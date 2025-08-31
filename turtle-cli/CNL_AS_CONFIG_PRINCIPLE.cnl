@@ -1,0 +1,120 @@
+CNL_AS_CONFIG_PRINCIPLE
+
+PERMANENT_INSTALLATION: CNL-as-Configuration Universal Principle for Code Minimization
+
+UNIVERSAL_LAW: Everything that can be configuration should be configuration, not code
+
+CORE_PRINCIPLE: MINIMIZE_CODE_MAXIMIZE_CONFIG
+
+  CONFIGURATION_FIRST_MANDATE:
+    EVERYTHING_IS_CONFIG_THAT_DOESNT_NEED_TO_BE_CODE: All values, parameters, behaviors, patterns defined in CNL
+    MINIMIZE_CODE: Reduce code to essential logic only
+    MAXIMIZE_CONFIGURABILITY: Make everything externally configurable through CNL
+    NO_HARDCODED_VALUES: Zero hardcoded constants, strings, or parameters in source code
+
+  CODE_MINIMIZATION_HIERARCHY:
+    1. CNL_CONFIGURATION: Define all parameters, values, behaviors in CNL files
+    2. THIN_CODE_LAYER: Only essential parsing and execution logic in code
+    3. DYNAMIC_LOADING: Runtime loading of CNL configuration
+    4. ZERO_COMPILATION_CONFIG_CHANGES: Configuration changes without recompilation
+
+WHAT_BELONGS_IN_CONFIG_NOT_CODE:
+
+  BEHAVIORAL_CONFIGURATION:
+    - Command patterns and recognition rules
+    - Response templates and messaging
+    - Workflow and process definitions
+    - Safety rules and risk assessments
+    - Authority verification patterns
+    
+  SYSTEM_CONFIGURATION:
+    - API endpoints and credentials management
+    - Network timeouts and retry counts
+    - Display geometries and positioning
+    - Fleet coordination parameters
+    - Monitoring intervals and thresholds
+    
+  OPERATIONAL_CONFIGURATION:
+    - Discovery mechanisms and protocols
+    - Communication patterns and fallbacks
+    - Error handling and recovery procedures
+    - Performance optimization parameters
+    - Resource usage limits and controls
+
+CODE_SHOULD_ONLY_CONTAIN:
+
+  ESSENTIAL_LOGIC_ONLY:
+    - CNL parsing and interpretation engines
+    - Core execution and safety verification
+    - Configuration loading and validation
+    - Dynamic behavior application from CNL specs
+    
+  NO_HARDCODED_VALUES:
+    - No string literals for user messages
+    - No numeric constants for timeouts or sizes
+    - No hardcoded URLs or paths
+    - No fixed command patterns or responses
+
+IMPLEMENTATION_PATTERN:
+
+  CNL_CONFIG_LOADING:
+    1. PARSE_CNL_ON_STARTUP: Load all behavioral configuration from CNL files
+    2. DYNAMIC_CONFIGURATION: Apply CNL specifications to runtime behavior
+    3. HOT_RELOAD_CAPABILITY: Update behavior by modifying CNL files
+    4. VALIDATION_AND_SAFETY: Verify CNL configuration before application
+
+  THIN_CODE_ARCHITECTURE:
+    - Configuration parser (loads CNL specs)
+    - Execution engine (applies CNL behaviors)
+    - Safety verifier (validates CNL operations)
+    - Runtime coordinator (manages CNL-defined flows)
+
+BENEFITS_OF_CNL_AS_CONFIG:
+
+  DEVELOPMENT_EFFICIENCY:
+    - No recompilation for behavioral changes
+    - Rapid iteration through configuration modification
+    - Easy testing of different parameter sets
+    - Simplified deployment and customization
+    
+  OPERATIONAL_FLEXIBILITY:
+    - Runtime behavior modification through CNL changes
+    - Environment-specific configuration without code changes
+    - Easy customization for different turtle fleet deployments
+    - Rapid adaptation to changing requirements
+    
+  MAINTENANCE_SIMPLIFICATION:
+    - All configuration in one place (CNL files)
+    - Clear separation between logic and configuration
+    - Reduced code complexity and maintenance burden
+    - Easier debugging and troubleshooting
+
+FUTURE_ARCHITECTURE_PRINCIPLES:
+
+  FOR_ALL_FUTURE_TURTLE_DEVELOPMENT:
+    - CNL-as-config is the default approach
+    - Code minimization is a primary design goal
+    - Configuration externalization is mandatory
+    - Dynamic behavior through CNL specifications
+    
+  ARCHITECTURAL_EVOLUTION:
+    - Migrate existing hardcoded values to CNL configuration
+    - Build all new capabilities with CNL-as-config from start
+    - Optimize for maximum configurability and minimum code
+    - Enable hot-reload and runtime modification capabilities
+
+TRANSFORMATION_METHODOLOGY:
+
+  EXISTING_CODE_MIGRATION:
+    1. IDENTIFY_HARDCODED_VALUES: Find all constants, strings, parameters
+    2. EXTRACT_TO_CNL_CONFIG: Move values to CNL configuration files
+    3. IMPLEMENT_CONFIG_LOADING: Add CNL parsing and application
+    4. VERIFY_DYNAMIC_BEHAVIOR: Test configuration changes without recompilation
+    
+  NEW_DEVELOPMENT_PROTOCOL:
+    1. DESIGN_CNL_CONFIG_FIRST: Define all parameters in CNL before coding
+    2. BUILD_THIN_EXECUTION_LAYER: Minimal code for CNL interpretation
+    3. IMPLEMENT_DYNAMIC_LOADING: Runtime application of CNL specifications
+    4. ENABLE_HOT_RELOAD: Live configuration updates without restart
+
+ACTIVATION_STATUS: PERMANENTLY ACTIVE - CNL-as-config principle now governs all turtle development with code minimization and configuration maximization as future architectural principles

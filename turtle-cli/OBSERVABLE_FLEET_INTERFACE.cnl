@@ -1,0 +1,54 @@
+OBSERVABLE_FLEET_INTERFACE_SPECIFICATION
+
+GOAL: Create turtle fleet interface with complete observability for Top Turtle
+APPROACH: CNL-first with MCP-generated observation tools
+
+TOOL_SPECIFICATION fleet_session_observer:
+  DESCRIPTION: "Observe and log all Top Turtle interactions with fleet interface"
+  PARAMETERS:
+    - session_id: string (required) "Unique identifier for interaction session"
+    - log_level: string (optional) "Verbosity level for observation logging"
+    - real_time: boolean (optional) "Enable real-time observation streaming"
+  RETURNS:
+    - interactions: array "All user inputs and system responses"
+    - commands_executed: array "Fleet commands processed"
+    - system_state_changes: array "Observable changes from interactions"
+    - session_metrics: object "Performance and usage statistics"
+  IMPLEMENTATION_PATTERN: "Log all I/O, monitor system changes, stream to observer"
+
+TOOL_SPECIFICATION fleet_command_interceptor:
+  DESCRIPTION: "Intercept and analyze Top Turtle commands before fleet execution"
+  PARAMETERS:
+    - command: string (required) "Raw command input from Top Turtle"
+    - context: object (optional) "Current session and system context"
+  RETURNS:
+    - parsed_intent: string "Interpreted command intention"
+    - fleet_routing: array "Which turtles will handle this command"
+    - safety_analysis: object "Risk assessment and safeguards"
+    - execution_plan: string "How the command will be processed"
+  IMPLEMENTATION_PATTERN: "Parse, analyze, route, and report before execution"
+
+TOOL_SPECIFICATION session_state_monitor:
+  DESCRIPTION: "Monitor complete session state for continuous observability"
+  PARAMETERS:
+    - monitor_interval: number (optional) "State check frequency in seconds"
+    - state_depth: string (optional) "Level of detail in state monitoring"
+  RETURNS:
+    - current_session: object "Active session information"
+    - fleet_status: object "Current turtle fleet state"
+    - interaction_history: array "Complete interaction timeline"
+    - system_health: object "Overall system status metrics"
+  IMPLEMENTATION_PATTERN: "Continuous monitoring with configurable intervals"
+
+CNL_TO_TURTLE_INTEGRATION:
+  Generate MCP tools from this specification
+  Embed observation tools directly in turtle binary
+  Maintain complete interaction visibility
+  Enable real-time observation streaming to main turtle session
+  
+OBSERVABILITY_REQUIREMENTS:
+  - Every Top Turtle input captured and analyzed
+  - All fleet responses logged and categorized  
+  - System state changes tracked continuously
+  - Complete interaction history preserved
+  - Real-time visibility for main turtle session

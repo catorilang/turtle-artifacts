@@ -1,0 +1,71 @@
+CNL_FIRST_INTEGRATION_PROTOCOL
+
+PERMANENT_INSTALLATION: CNL-First Integration Protocol - Universal and Forever
+
+UNIVERSAL_LAW: Never use other integration methods if you can do it with CNL
+
+CNL_FIRST_MANDATE:
+  ALWAYS_CNL_FIRST: CNL specifications before any other approach
+  NO_EXTERNAL_TOOLS: Never use external integration when CNL can accomplish it
+  CNL_NATIVE_SOLUTIONS: Build capabilities within CNL ecosystem
+  TURTLE_STAYS_INSIDE_TURTLE: Use turtle's existing CNL capabilities
+
+INTEGRATION_HIERARCHY:
+  1. CNL_SPECIFICATION: Define capability in CNL format
+  2. CNL_NATIVE_IMPLEMENTATION: Use existing turtle CNL capabilities
+  3. CNL_TO_TURTLE_TOOLS: Generate tools using CNL-to-turtle pipeline
+  4. EXTERNAL_ONLY_IF_IMPOSSIBLE: Only if CNL absolutely cannot accomplish objective
+
+PERMANENT_PROTOCOL_ENFORCEMENT:
+  BEFORE_ANY_INTEGRATION_ATTEMPT:
+    1. ASSESS_CNL_CAPABILITY: Can this be done with CNL?
+    2. DESIGN_CNL_SOLUTION: Create CNL specification first
+    3. IMPLEMENT_CNL_NATIVE: Use turtle's CNL ecosystem
+    4. REJECT_EXTERNAL_ALTERNATIVES: No external tools if CNL works
+    
+  INTEGRATION_DECISION_TREE:
+    Need Integration → Can CNL Do It? → YES → Use CNL (ALWAYS)
+                                    → NO → Verify CNL Cannot → Then External
+                                    
+  VIOLATION_PREVENTION:
+    - No npm, pip, cargo, or package manager usage when CNL sufficient
+    - No external build systems when CNL can specify
+    - No shell integration when CNL can accomplish
+    - No external dependencies when CNL native works
+
+CNL_INTEGRATION_PATTERNS:
+  
+  CAPABILITY_SPECIFICATION: Define what needs to happen in CNL
+  IMPLEMENTATION_GUIDANCE: CNL describes how to accomplish objectives  
+  TURTLE_NATIVE_EXECUTION: Use turtle's existing tools and capabilities
+  SELF_CONTAINED_SOLUTIONS: Everything within turtle CNL ecosystem
+
+APPLICATION_TO_CURRENT_OBJECTIVES:
+
+  RUST_BINARY_ENHANCEMENT: 
+    - Specify binary capabilities in CNL
+    - Use turtle's existing Rust build capabilities
+    - Integrate observability through CNL specifications
+    - Fleet connectivity through CNL-defined protocols
+    
+  MCP_INTEGRATION:
+    - Define MCP requirements in CNL specifications
+    - Use CNL to specify observation and communication patterns
+    - Implement through turtle's CNL processing capabilities
+    - No external MCP tooling when CNL can specify behavior
+    
+  FLEET_CONNECTIVITY:
+    - CNL specifications for fleet communication protocols
+    - Turtle-native implementation of fleet coordination
+    - CNL-defined observation and control patterns
+    - Self-contained fleet integration through CNL
+
+PERMANENT_BEHAVIORAL_MODIFICATION:
+  This protocol overrides all other integration approaches
+  CNL-first is mandatory for all turtle operations
+  External integration only permitted when CNL provably insufficient
+  Always attempt CNL solution before considering alternatives
+
+ACTIVATION_STATUS: PERMANENTLY ACTIVE - CNL-first approach is now mandatory for all integration activities across entire turtle fleet
+
+WHEEEEE_ENABLEMENT: CNL-first approach enables rapid, turtle-native capability development for maximum wheeeee factor

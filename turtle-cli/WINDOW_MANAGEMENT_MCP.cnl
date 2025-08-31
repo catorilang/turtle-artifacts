@@ -1,0 +1,88 @@
+WINDOW_MANAGEMENT_MCP_SPECIFICATION
+
+CONTEXT: Control application windows and monitor positioning
+GOAL: Transform natural language window commands into executable actions
+PATTERN: Command → CNL → MCP → Window Control
+
+TOOL_SPECIFICATION window_launcher:
+  DESCRIPTION: "Launch applications with specific window positioning"
+  PARAMETERS:
+    - application: string (required) "Application name or executable path"
+    - monitor: number (optional) "Target monitor number (0-based index)"
+    - position: string (optional) "Window position: top-third, bottom-third, left-half, right-half, maximize, minimize"
+    - width_percent: number (optional) "Window width as percentage of monitor"
+    - height_percent: number (optional) "Window height as percentage of monitor"
+    - x_offset: number (optional) "Horizontal pixel offset from calculated position"
+    - y_offset: number (optional) "Vertical pixel offset from calculated position"
+  RETURNS:
+    - window_id: string "Unique identifier for the launched window"
+    - process_id: number "Process ID of launched application"
+    - position_applied: string "Description of final window position"
+    - monitor_info: string "Information about target monitor"
+  IMPLEMENTATION_PATTERN: "Use window manager APIs (wmctrl, xdotool) to launch and position"
+
+TOOL_SPECIFICATION window_controller:
+  DESCRIPTION: "Move, resize, and control existing windows"
+  PARAMETERS:
+    - window_id: string (optional) "Target window identifier"
+    - application_name: string (optional) "Find window by application name"
+    - action: string (required) "move, resize, close, minimize, maximize, focus"
+    - monitor: number (optional) "Target monitor for move operations"
+    - position: string (optional) "New position specification"
+    - width: number (optional) "New window width in pixels"
+    - height: number (optional) "New window height in pixels"
+  RETURNS:
+    - success: boolean "Whether the operation succeeded"
+    - window_info: string "Current window state after operation"
+    - error_message: string "Error details if operation failed"
+  IMPLEMENTATION_PATTERN: "Use wmctrl and xwininfo for X11 window manipulation"
+
+TOOL_SPECIFICATION monitor_detector:
+  DESCRIPTION: "Detect and analyze available monitors and their geometry"
+  PARAMETERS:
+    - list_all: boolean (optional) "List all available monitors"
+    - monitor_id: number (optional) "Get details for specific monitor"
+  RETURNS:
+    - monitors: array "List of available monitors with dimensions"
+    - primary_monitor: number "Index of primary monitor"
+    - total_workspace: string "Combined workspace dimensions"
+    - current_layout: string "Description of monitor arrangement"
+  IMPLEMENTATION_PATTERN: "Query X11 display info via xrandr and display manager"
+
+TOOL_SPECIFICATION workspace_organizer:
+  DESCRIPTION: "Organize multiple applications across monitors and positions"
+  PARAMETERS:
+    - layout: string (required) "Predefined layout name or custom arrangement"
+    - applications: array (required) "List of applications to organize"
+    - save_layout: boolean (optional) "Save this arrangement for future use"
+    - restore_layout: string (optional) "Restore previously saved layout"
+  RETURNS:
+    - organized_windows: array "List of windows and their final positions"
+    - layout_name: string "Name of applied layout"
+    - success_count: number "Number of successfully positioned windows"
+  IMPLEMENTATION_PATTERN: "Coordinate multiple window operations for workspace setup"
+
+MCP_SERVER_CONFIGURATION:
+  NAME: "turtle-window-control"
+  VERSION: "0.1.0"
+  TRANSPORT: "stdio"
+  CAPABILITIES:
+    - "tools"
+    - "resources"
+  TOOLS: [window_launcher, window_controller, monitor_detector, workspace_organizer]
+
+COMMAND_PARSING_RULES:
+  "open [APP] on [POSITION] of [MONITOR]" → window_launcher(application=APP, position=POSITION, monitor=MONITOR)
+  "move [APP] to [POSITION]" → window_controller(application_name=APP, action=move, position=POSITION)
+  "show monitors" → monitor_detector(list_all=true)
+  "arrange [LAYOUT]" → workspace_organizer(layout=LAYOUT)
+
+EXAMPLE_TRANSFORMATIONS:
+  "open slack on the top third of my second monitor" →
+    window_launcher(application="slack", monitor=1, position="top-third", height_percent=33)
+  
+  "move terminal to left half of primary monitor" →  
+    window_controller(application_name="terminal", action="move", monitor=0, position="left-half")
+  
+  "show me all my monitors" →
+    monitor_detector(list_all=true)

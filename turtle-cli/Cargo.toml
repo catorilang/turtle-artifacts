@@ -1,11 +1,35 @@
 [package]
 name = "turtle"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
+
+[lib]
+name = "turtle"
+path = "src/lib.rs"
 
 [[bin]]
 name = "turtle"
 path = "src/main.rs"
+
+[[bin]]
+name = "turtle-work"
+path = "src/bin/work.rs"
+
+[[bin]]
+name = "turtle-infra"
+path = "src/bin/infra.rs"
+
+[[bin]]
+name = "turtle-dashboard"
+path = "src/bin/dashboard.rs"
+
+[[bin]]
+name = "turtle-status"
+path = "src/bin/status.rs"
+
+[[bin]]
+name = "turtle-repl"
+path = "src/bin/turtle-repl.rs"
 
 [dependencies]
 tokio = { version = "1.0", features = ["full"] }
@@ -15,9 +39,11 @@ clap = { version = "4.0", features = ["derive"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 reqwest = { version = "0.11", features = ["json"] }
+base64 = "0.21"
 chrono = { version = "0.4", features = ["serde"] }
 anyhow = "1.0"
 thiserror = "1.0"
 git2 = "0.18"
 sysinfo = "0.29"
 signal-hook = "0.3"
+regex = "1.10"

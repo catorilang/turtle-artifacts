@@ -1,0 +1,71 @@
+TERMINAL_CONTROL_MCP_SPECIFICATION
+
+CONTEXT: Generate MCP tools for terminal control and observation
+GOAL: Transform CNL specifications into functional MCP server tools
+PATTERN: CNL → JSON Schema → MCP Server → Tool Registration
+
+TOOL_SPECIFICATION terminal_observer:
+  DESCRIPTION: "Observe running processes in terminals and capture output"
+  PARAMETERS:
+    - terminal_id: string (required) "Identifier for specific terminal session"
+    - filter_pattern: string (optional) "Regex pattern to filter output lines"
+    - follow: boolean (optional) "Continuously monitor new output"
+  RETURNS:
+    - stdout: string "Captured standard output"
+    - stderr: string "Captured error output" 
+    - status: string "Running/stopped/error state"
+    - timestamp: string "Last update timestamp"
+  IMPLEMENTATION_PATTERN: "Use system calls to monitor process output streams"
+
+TOOL_SPECIFICATION terminal_commander:
+  DESCRIPTION: "Send commands to specific terminal sessions"
+  PARAMETERS:
+    - terminal_id: string (required) "Target terminal identifier"
+    - command: string (required) "Command to execute"
+    - wait_for_completion: boolean (optional) "Block until command finishes"
+    - timeout_ms: number (optional) "Maximum wait time in milliseconds"
+  RETURNS:
+    - command_id: string "Unique identifier for the command execution"
+    - initial_output: string "First output received"
+    - status: string "Started/completed/timeout/error"
+  IMPLEMENTATION_PATTERN: "Write to terminal stdin and monitor response"
+
+TOOL_SPECIFICATION terminal_manager:
+  DESCRIPTION: "Create, list, and manage terminal sessions"
+  PARAMETERS:
+    - action: string (required) "create/list/close/switch"
+    - terminal_id: string (optional) "Target terminal for close/switch actions"
+    - working_directory: string (optional) "Initial directory for new terminals"
+    - shell: string (optional) "Shell type (bash/zsh/fish) for new terminals"
+  RETURNS:
+    - terminals: array "List of active terminal sessions"
+    - active_terminal: string "Currently active terminal ID"
+    - result: string "Action result message"
+  IMPLEMENTATION_PATTERN: "Interface with terminal multiplexer or process manager"
+
+MCP_SERVER_CONFIGURATION:
+  NAME: "turtle-terminal-control"
+  VERSION: "0.1.0"
+  TRANSPORT: "stdio"
+  CAPABILITIES:
+    - "tools"
+    - "resources" 
+    - "prompts"
+  TOOLS: [terminal_observer, terminal_commander, terminal_manager]
+  
+GENERATION_RULES:
+  1. Each TOOL_SPECIFICATION becomes MCP tool with JSON schema
+  2. PARAMETERS map to tool parameter schema with type validation
+  3. RETURNS define expected response structure
+  4. IMPLEMENTATION_PATTERN guides server-side tool logic
+  5. Server exposes all tools through MCP protocol
+
+CNLTOMCP_TRANSFORMATION:
+  INPUT: CNL specification with TOOL_SPECIFICATION blocks
+  OUTPUT: Executable MCP server with registered tools
+  PROCESS:
+    1. Parse CNL TOOL_SPECIFICATION sections
+    2. Generate JSON Schema for each tool's parameters/returns
+    3. Create MCP server boilerplate with tool handlers
+    4. Implement tool logic based on IMPLEMENTATION_PATTERN
+    5. Register server with Claude Code environment
